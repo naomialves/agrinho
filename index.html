@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +11,12 @@
 <body>
     <!-- Header -->
     <header>
-        <nav class="container d-flex justify-content-between align-items-center">
+        <nav class="container d-flex justify-content-between align-items-center" aria-label="Menu principal">
             <ul class="nav">
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#campo">Campo</a></li>
                 <li><a href="#cidade">Cidade</a></li>
+                <li><a href="#festejando">Festejando</a></li>
                 <li><a href="#galeria">Galeria</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
@@ -23,15 +24,15 @@
     </header>
 
     <!-- Botões de Acessibilidade e Tema -->
-    <div id="acessibilidade">
-        <button id="aumentar-fonte">A +</button>
-        <button id="diminuir-fonte">A -</button>
-        <button class="toggle-mode">🌙</button>
+    <div id="acessibilidade" aria-label="Acessibilidade">
+        <button id="aumentar-fonte" aria-label="Aumentar fonte">A +</button>
+        <button id="diminuir-fonte" aria-label="Diminuir fonte">A -</button>
+        <button class="toggle-mode" aria-label="Alternar tema">🌙</button>
     </div>
 
     <!-- Banner -->
-    <section id="banner">
-        <img src="img/banner-rural.jpg" alt="Banner rural" class="banner-img">
+    <section id="banner" aria-label="Banner principal">
+        <img src="img/banner-rural.jpg" alt="Banner rural" class="banner-img" style="display:none;">
         <div class="banner-overlay">
             <h1>Conexão Campo-Cidade</h1>
             <p>Unindo o melhor do campo e da cidade para um futuro sustentável.</p>
@@ -47,7 +48,7 @@
     <!-- Main Content -->
     <main>
         <!-- Seção Início -->
-        <section id="inicio">
+        <section id="inicio" aria-label="Início">
             <div class="container text-center">
                 <h1>Bem-vindo à Conexão Campo-Cidade</h1>
                 <p>Explore a harmonia entre o campo e a cidade.</p>
@@ -56,12 +57,12 @@
         </section>
 
         <!-- Seção Campo-Cidade -->
-        <section id="Campo-Cidade" class="my-5 pt-6 secao-Campo-Cidade">
-            <div class="container d-flex align-items-center">
-                <div class="col-4 d-flex justify-content-center">
+        <section id="campo-cidade" class="my-5 pt-6 secao-campo-cidade" aria-label="Sobre o site">
+            <div class="container d-flex align-items-center flex-wrap">
+                <div class="col-12 col-md-4 d-flex justify-content-center mb-3 mb-md-0">
                     <img src="img/2.png" class="rounded-pill" alt="Imagem representativa" loading="lazy">
                 </div>
-                <div class="col-5">
+                <div class="col-12 col-md-8">
                     <h2>Para que este site foi criado?</h2>
                     <p class="p-2">Este site foi criado para celebrar as igualdades e diferenças entre o campo e a cidade, mostrando como a agricultura e a cultura urbana se entrelaçam. Através de imagens, vídeos e informações, buscamos destacar a importância da conexão entre esses dois mundos, promovendo um diálogo enriquecedor e inspirador.</p>
                 </div>
@@ -69,7 +70,7 @@
         </section>
 
         <!-- Seção Campo -->
-        <section id="campo" class="my-5">
+        <section id="campo" class="my-5" aria-label="Campo">
             <div class="container">
                 <h2 class="text-center">Campo</h2>
                 <p class="text-center">A Vida no Campo: Harmonia e Simplicidade</p>
@@ -85,7 +86,7 @@
         </section>
 
         <!-- Seção Cidade -->
-        <section id="cidade" class="my-5">
+        <section id="cidade" class="my-5" aria-label="Cidade">
             <div class="container">
                 <h2 class="text-center">Cidade</h2>
                 <p class="text-center">A Vida na Cidade: Movimento, Diversidade e Oportunidade</p>
@@ -101,22 +102,33 @@
         </section>
 
         <!-- Seção Festejando -->
-        <section id="festejando" class="my-5">
+        <section id="festejando" class="my-5" aria-label="Festejando">
             <div class="container">
                 <h2 class="text-center">Festejando</h2>
-                <p class="text-center"> A Conexão Campo-Cidade: Unindo Tradição e Modernidade
-A conexão entre o campo e a cidade vai além de simples contrastes geográficos. Ela é um elo vital que traz consigo a união entre a tranquilidade e a agitação, a simplicidade e a inovação, o passado e o futuro. A vida no campo, com seus campos vastos e horizontes intermináveis, é o coração pulsante de nossas origens. Já a cidade, com suas luzes vibrantes e ritmo acelerado, representa a evolução e o progresso da sociedade.
-
-No campo, a natureza se apresenta em sua forma mais pura, com rios, árvores e uma fauna diversificada. A agricultura, base de muitas economias, é o alicerce que sustenta a vida rural. Aqui, cada estação do ano traz um novo ciclo, um novo aprendizado. O trabalho com a terra é o reflexo do respeito à natureza e à paciência. O campo ensina a viver de forma mais simples, mas profunda, valorizando cada detalhe do que a terra oferece.
-
-A cidade, por sua vez, é o símbolo do encontro de culturas e do movimento incessante da vida. A urbanização trouxe mais conforto, comunicação e oportunidades de desenvolvimento. Nela, o espírito de inovação e a busca pelo futuro nunca param. As ruas da cidade são um reflexo das mudanças constantes que, em muitos casos, começam nos campos. As tecnologias agrícolas, que ajudam a aumentar a produtividade e a sustentabilidade, frequentemente têm origem nas inovações urbanas.
-
-A conexão entre o campo e a cidade é essencial para que um mundo sustentável e equilibrado seja possível. O campo precisa da cidade para escoar seus produtos e obter tecnologia e conhecimento. A cidade, por sua vez, depende daquilo que o campo oferece: alimentos frescos, recursos naturais e um ritmo que, muitas vezes, serve como antídoto à sua correria.
-
-Essa relação é uma troca constante que alimenta ambos os lados. O campo traz para a cidade suas raízes, suas tradições e a serenidade da natureza, enquanto a cidade oferece à vida rural os benefícios da inovação e do progresso. Quando essas duas realidades se conectam, formam uma rede de aprendizado mútuo, criando um ciclo que impulsiona o desenvolvimento e promove o respeito por todas as formas de vida.
-
-A verdadeira beleza dessa conexão está na harmonia que ela cria, um equilíbrio entre os campos verdes e as cidades movimentadas. E, acima de tudo, a certeza de que, juntos, campo e cidade podem construir um futuro mais sustentável, próspero e humano.</p>
-                <div class="row justify-content-center">
+                <div class="text-center" style="max-width: 900px; margin: 0 auto;">
+                    <p>
+                        <strong>A Conexão Campo-Cidade: Unindo Tradição e Modernidade</strong>
+                    </p>
+                    <p>
+                        A conexão entre o campo e a cidade vai além de simples contrastes geográficos. Ela é um elo vital que traz consigo a união entre a tranquilidade e a agitação, a simplicidade e a inovação, o passado e o futuro. A vida no campo, com seus campos vastos e horizontes intermináveis, é o coração pulsante de nossas origens. Já a cidade, com suas luzes vibrantes e ritmo acelerado, representa a evolução e o progresso da sociedade.
+                    </p>
+                    <p>
+                        No campo, a natureza se apresenta em sua forma mais pura, com rios, árvores e uma fauna diversificada. A agricultura, base de muitas economias, é o alicerce que sustenta a vida rural. Aqui, cada estação do ano traz um novo ciclo, um novo aprendizado. O trabalho com a terra é o reflexo do respeito à natureza e à paciência. O campo ensina a viver de forma mais simples, mas profunda, valorizando cada detalhe do que a terra oferece.
+                    </p>
+                    <p>
+                        A cidade, por sua vez, é o símbolo do encontro de culturas e do movimento incessante da vida. A urbanização trouxe mais conforto, comunicação e oportunidades de desenvolvimento. Nela, o espírito de inovação e a busca pelo futuro nunca param. As ruas da cidade são um reflexo das mudanças constantes que, em muitos casos, começam nos campos. As tecnologias agrícolas, que ajudam a aumentar a produtividade e a sustentabilidade, frequentemente têm origem nas inovações urbanas.
+                    </p>
+                    <p>
+                        A conexão entre o campo e a cidade é essencial para que um mundo sustentável e equilibrado seja possível. O campo precisa da cidade para escoar seus produtos e obter tecnologia e conhecimento. A cidade, por sua vez, depende daquilo que o campo oferece: alimentos frescos, recursos naturais e um ritmo que, muitas vezes, serve como antídoto à sua correria.
+                    </p>
+                    <p>
+                        Essa relação é uma troca constante que alimenta ambos os lados. O campo traz para a cidade suas raízes, suas tradições e a serenidade da natureza, enquanto a cidade oferece à vida rural os benefícios da inovação e do progresso. Quando essas duas realidades se conectam, formam uma rede de aprendizado mútuo, criando um ciclo que impulsiona o desenvolvimento e promove o respeito por todas as formas de vida.
+                    </p>
+                    <p>
+                        A verdadeira beleza dessa conexão está na harmonia que ela cria, um equilíbrio entre os campos verdes e as cidades movimentadas. E, acima de tudo, a certeza de que, juntos, campo e cidade podem construir um futuro mais sustentável, próspero e humano.
+                    </p>
+                </div>
+                <div class="row justify-content-center mt-4">
                     <div class="col-md-4">
                         <img src="img/festa1.jpg" class="img-fluid rounded-5" alt="Festa no campo" loading="lazy">
                     </div>
@@ -128,7 +140,7 @@ A verdadeira beleza dessa conexão está na harmonia que ela cria, um equilíbri
         </section>
 
         <!-- Seção Notícias -->
-        <section id="noticias" class="my-5">
+        <section id="noticias" class="my-5" aria-label="Notícias do Dia a Dia">
             <div class="container">
                 <h2 class="text-center">Notícias do Dia a Dia</h2>
                 <p class="text-center">Fique por dentro das últimas notícias sobre o campo e a cidade. Explore os principais acontecimentos e tendências que conectam esses dois mundos.</p>
@@ -154,11 +166,19 @@ A verdadeira beleza dessa conexão está na harmonia que ela cria, um equilíbri
                         </div>
                     </div>
                 </div>
+                <!-- Vídeo informativo do YouTube -->
+                <div class="row justify-content-center mt-4">
+                    <div class="col-12" style="display: flex; justify-content: center;">
+                        <div style="max-width: 560px; width: 100%;">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/8lQO0p3pQyA" title="O que é Agricultura Sustentável? | Canal Futura" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Seção Galeria -->
-        <section id="galeria">
+        <section id="galeria" aria-label="Galeria">
             <h2 class="text-center">Galeria</h2>
             <div class="carousel">
                 <img src="img/galeria1.jpg" alt="Imagem de um campo verde">
@@ -173,11 +193,11 @@ A verdadeira beleza dessa conexão está na harmonia que ela cria, um equilíbri
         </section>
 
         <!-- Seção Contato -->
-        <section id="contato">
+        <section id="contato" aria-label="Contato">
             <div class="container p-5 d-flex justify-content-center">
                 <div class="col-md-8 col-lg-10 rounded-5 formulario">
                     <h2 class="mb-3">Entre em contato</h2>
-                    <form>
+                    <form action="https://formsubmit.co/naomigabrielecostaalves@gmail.com" method="POST">
                         <div class="form-group mb-3">
                             <label for="nome">Nome</label>
                             <input type="text" id="nome" name="nome" class="form-control rounded-3 mt-1" placeholder="Digite seu nome completo" required>
@@ -190,6 +210,9 @@ A verdadeira beleza dessa conexão está na harmonia que ela cria, um equilíbri
                             <label for="mensagem">Mensagem</label>
                             <textarea id="mensagem" name="mensagem" class="form-control rounded-4 mt-2" rows="4" placeholder="Escreva sua mensagem" required></textarea>
                         </div>
+                        <!-- Proteção contra spam (opcional, oculto) -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://agrinho-site-sucesso.vercel.app/obrigado.html">
                         <div class="d-grid gap-2">
                             <button type="submit" class="btn btn-primary btn-lg rounded-pill">Enviar mensagem</button>
                         </div>
@@ -204,8 +227,7 @@ A verdadeira beleza dessa conexão está na harmonia que ela cria, um equilíbri
         <p>&copy; 2025 Conexão Campo-Cidade. Todos os direitos reservados.</p>
         <p>Desenvolvido por Naomi. Projeto fictício sem fins comerciais.</p>
         <p>
-            <a href="https://github.com/naomialves" target="_blank" rel="noopener noreferrer">git add .
-
+            <a href="https://github.com/naomialves" target="_blank" rel="noopener noreferrer">
                 Meu GitHub
             </a>
         </p>
