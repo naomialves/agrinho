@@ -1,25 +1,41 @@
-/* styles.css */
+/* --- Estilo Rústico e Sofisticado --- */
+:root {
+    --bg-color: #f6f1e7;
+    --text-color: #3e2c1a;
+    --primary-color: #7c5a37;
+    --secondary-color: #bfa074;
+    --accent-color: #a67c52;
+    --bg-dark: #2a2318;
+    --text-dark: #f5f5f5;
+    --focus-outline: #e0b97d;
+    --wood-pattern: url('img/wood/wood-texture.jpg');
+    --linen-pattern: url('img/linen.png');
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Merriweather', 'Georgia', serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     margin: 0;
     padding: 0;
     transition: background-color 0.3s, color 0.3s;
-    line-height: 1.6;
+    line-height: 1.7;
     font-size: 16px;
-    background-image: url('img/wood-texture.jpg');
-    background-size: cover;
+    background-image: var(--wood-pattern), var(--linen-pattern);
+    background-size: cover, 400px;
     background-attachment: fixed;
+    background-blend-mode: multiply;
+    position: relative;
 }
 
-:root {
-    --bg-color: #fdf8f0;
-    --text-color: #4b3f2f;
-    --primary-color: #8c6a43;
-    --secondary-color: #c19a6b;
-    --bg-dark: #2e2b26;
-    --text-dark: #eae0d5;
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(245, 236, 220, 0.7);
+    pointer-events: none;
+    z-index: 0;
+    transition: background 0.3s;
 }
 
 body.dark-mode {
@@ -27,126 +43,305 @@ body.dark-mode {
     --text-color: var(--text-dark);
 }
 
-header {
-    background-color: #6b4226;
-    padding: 20px 30px;
+body.dark-mode::before {
+    background: rgba(44, 36, 24, 0.85);
+}
+
+/* --- Banner Rústico --- */
+#banner {
+    position: relative;
+    width: 100vw;
+    min-height: 60vh;
+    height: 100vh;
+    max-height: 700px;
+    background: url('img/banner-rural.jpg') no-repeat center center/cover, linear-gradient(120deg, #7c5a37 60%, #bfa074 100%);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+    justify-content: flex-start;
     color: #fff;
-    border-bottom: 3px solid #8c6a43;
-    font-family: 'Georgia', serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    font-family: 'Merriweather', 'Georgia', serif;
+    box-shadow: 0 8px 32px rgba(60,40,20,0.18);
+    border-bottom: 8px solid var(--secondary-color);
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.banner-overlay {
+    background: rgba(60, 40, 20, 0.55);
+    padding: 48px 40px 32px 60px;
+    border-radius: 0 0 32px 0;
+    box-shadow: 0 8px 32px rgba(60,40,20,0.18);
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.banner-overlay h1 {
+    font-size: 3.2rem;
+    font-family: 'Merriweather', 'Georgia', serif;
+    color: #ffe7c2;
+    margin-bottom: 12px;
+    text-shadow: 2px 2px 8px #7c5a37;
+    letter-spacing: 2px;
+}
+
+.banner-overlay p {
+    font-size: 1.4rem;
+    color: #f5e2c0;
+    margin-bottom: 28px;
+    text-shadow: 1px 1px 4px #7c5a37;
+}
+
+.banner-buttons {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.banner-buttons .btn {
+    background: linear-gradient(90deg, #bfa074 60%, #7c5a37 100%);
+    color: #3e2c1a;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: 2px solid #fff3e0;
+    box-shadow: 0 4px 12px rgba(60,40,20,0.13);
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.banner-buttons .btn:hover, .banner-buttons .btn:focus {
+    background: linear-gradient(90deg, #7c5a37 60%, #bfa074 100%);
+    color: #fff;
+    outline: 2px solid var(--focus-outline);
+    transform: scale(1.07);
+}
+
+/* --- Header Rústico --- */
+header {
+    background: rgba(124, 90, 55, 0.97);
+    padding: 18px 0 10px 0;
+    border-bottom: 5px solid var(--secondary-color);
+    font-family: 'Merriweather', 'Georgia', serif;
+    box-shadow: 0 4px 16px rgba(60,40,20,0.10);
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 header nav ul {
     list-style-type: none;
     display: flex;
-    gap: 20px;
+    gap: 28px;
+    margin: 0;
+    padding: 0 32px;
 }
 
 header nav a {
     text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-    font-family: 'Georgia', serif;
-    font-size: 1rem;
-    transition: color 0.3s;
+    color: #ffe7c2;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
 }
 
-header nav a:hover {
-    color: var(--secondary-color);
+header nav a:hover, header nav a:focus {
+    background: var(--secondary-color);
+    color: #3e2c1a;
+    outline: 2px solid var(--focus-outline);
 }
 
-footer {
-    background-color: var(--primary-color);
-    color: var(--text-dark);
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-    border-top: 5px solid var(--secondary-color);
-    font-family: 'Georgia', serif;
-    font-size: 0.9rem;
-}
-
-footer a {
-    color: var(--text-dark);
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-footer a:hover {
-    color: var(--secondary-color);
-}
-
+/* --- Seções Gerais --- */
 section {
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 1px solid var(--secondary-color);
-    border-radius: 15px;
-    padding: 30px;
-    margin: 20px auto;
+    background: rgba(255, 250, 240, 0.93);
+    border: 2px solid var(--secondary-color);
+    border-radius: 18px;
+    padding: 48px 24px 36px 24px;
+    margin: 38px auto 0 auto;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 18px rgba(124,90,55,0.10);
+    max-width: 1100px;
+}
+
+body.dark-mode section {
+    background: rgba(44, 36, 24, 0.93);
+    border-color: var(--secondary-color);
 }
 
 section h2 {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
     color: var(--primary-color);
-    margin-bottom: 20px;
+    margin-bottom: 22px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
+    font-family: 'Merriweather', 'Georgia', serif;
+    text-shadow: 0 2px 8px rgba(140,106,67,0.08);
 }
 
 section p {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: var(--text-color);
     max-width: 800px;
-    margin: 0 auto 20px;
+    margin: 0 auto 22px;
     line-height: 1.8;
+    font-family: 'Georgia', serif;
 }
 
-.gallery img {
-    margin: 15px auto;
-    border-radius: 20px;
-    width: 90%;
-    max-width: 300px;
-    height: auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+body.dark-mode section h2, body.dark-mode section p {
+    color: var(--text-dark);
+}
+
+/* --- Cards e Notícias --- */
+.noticia-card {
+    background: #fff8ef;
+    border: 2px solid var(--secondary-color);
+    border-radius: 15px;
+    padding: 26px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(124,90,55,0.10);
     transition: transform 0.3s, box-shadow 0.3s;
+    min-width: 220px;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.gallery img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+body.dark-mode .noticia-card {
+    background: #2a2318;
+    color: var(--text-dark);
+    border-color: var(--secondary-color);
 }
 
-button {
-    background-color: #8c6a43;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
+.noticia-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 13px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.noticia-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.noticia-card ul li {
+    margin-bottom: 10px;
+}
+
+.noticia-card ul li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
     font-size: 1rem;
+    transition: color 0.3s, text-decoration 0.3s;
+    border-bottom: 1.5px dotted var(--secondary-color);
+    padding-bottom: 2px;
+}
+
+.noticia-card ul li a:hover,
+.noticia-card ul li a:focus {
+    color: #b87b2e;
+    text-decoration: underline;
+    outline: none;
+}
+
+/* --- Inputs e Formulários --- */
+input, textarea, select {
+    background: #fff8ef;
+    color: #3e2c1a;
+    border: 2px solid var(--secondary-color);
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Georgia', serif;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    margin-bottom: 10px;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px var(--primary-color);
+    outline: none;
+}
+
+body.dark-mode input, body.dark-mode textarea, body.dark-mode select {
+    background: #2a2318;
+    color: var(--text-dark);
+    border-color: var(--secondary-color);
+}
+
+body.dark-mode input:focus, body.dark-mode textarea:focus, body.dark-mode select:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 8px var(--secondary-color);
+}
+
+/* --- Botões --- */
+button, .btn {
+    background: linear-gradient(90deg, #bfa074 60%, #7c5a37 100%);
+    color: #3e2c1a;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 12px rgba(60,40,20,0.13);
+    margin-top: 8px;
 }
 
-button:hover {
-    background-color: #6b4226;
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+button:focus, .btn:focus {
+    outline: 2px solid var(--focus-outline);
+    outline-offset: 2px;
 }
 
-/* 🌐 Estilo do Carrossel */
+button:hover, .btn:hover {
+    background: linear-gradient(90deg, #7c5a37 60%, #bfa074 100%);
+    color: #fff;
+    transform: scale(1.07);
+}
+
+/* --- Acessibilidade e Tema --- */
+#acessibilidade {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1000;
+}
+
+#acessibilidade button {
+    background: var(--primary-color);
+    color: #fff8ef;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-shadow: 0 2px 8px rgba(60,40,20,0.10);
+}
+
+#acessibilidade button:hover {
+    background: var(--secondary-color);
+    color: #3e2c1a;
+}
+
+/* --- Carrossel --- */
 .carousel {
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
-    gap: 15px;
-    padding: 20px 0;
+    gap: 18px;
+    padding: 24px 0;
 }
 
 .carousel::-webkit-scrollbar {
@@ -160,284 +355,167 @@ button:hover {
 
 .carousel img {
     flex: 0 0 auto;
-    width: 300px;
-    height: 200px;
+    width: 320px;
+    height: 210px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 14px;
     border: 3px solid var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(124,90,55,0.13);
     transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff8ef;
 }
 
 .carousel img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.07);
+    box-shadow: 0 8px 24px rgba(124,90,55,0.18);
 }
 
-/* 🌐 Estilo da Seção de Notícias */
-#noticias {
-    background-color: var(--bg-color);
-    padding: 40px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#noticias h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: var(--primary-color);
-}
-
-.noticia-card {
-    background-color: #fff;
-    border: 1px solid var(--secondary-color);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.noticia-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.noticia-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: var(--primary-color);
-    text-transform: uppercase;
-}
-
-.noticia-card ul {
-    list-style: none;
-    padding: 0;
-}
-
-.noticia-card ul li {
-    margin-bottom: 10px;
-}
-
-.noticia-card ul li a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: bold;
-    transition: color 0.3s, text-decoration 0.3s;
-}
-
-.noticia-card ul li a:hover {
-    color: var(--primary-color);
-    text-decoration: underline;
-}
-
-/* 🌐 Botões de Acessibilidade e Tema */
-#acessibilidade {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 1000;
-}
-
-#acessibilidade button {
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#acessibilidade button:hover {
-    background-color: var(--secondary-color);
-}
-
-/* 🌐 Layout Geral */
-header {
-    background-color: var(--primary-color);
-    padding: 20px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #fff;
-    border-bottom: 5px solid var(--secondary-color);
-    font-family: 'Georgia', serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-header nav ul {
-    list-style-type: none;
-    display: flex;
-    gap: 20px;
-}
-
-header nav a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-    font-family: 'Georgia', serif;
-    font-size: 1rem;
-    transition: color 0.3s;
-}
-
-header nav a:hover {
-    color: var(--secondary-color);
-}
-
-section {
-    background-color: var(--bg-color);
-    border: 1px solid var(--secondary-color);
-    border-radius: 15px;
-    padding: 50px 20px;
-    margin: 30px auto;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-section h2 {
-    font-size: 2.2rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-}
-
-section p {
-    font-size: 1.1rem;
-    color: var(--text-color);
-    max-width: 800px;
-    margin: 0 auto 20px;
-    line-height: 1.8;
-}
-
+/* --- Footer --- */
 footer {
-    background-color: var(--primary-color);
-    color: var(--text-dark);
+    background: linear-gradient(90deg, #7c5a37 60%, #bfa074 100%);
+    color: #fff8ef;
     text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-    border-top: 5px solid var(--secondary-color);
-    font-family: 'Georgia', serif;
-    font-size: 0.9rem;
+    padding: 28px 10px 18px 10px;
+    margin-top: 32px;
+    border-top: 6px solid var(--secondary-color);
+    font-family: 'Merriweather', 'Georgia', serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    box-shadow: 0 -2px 12px rgba(124,90,55,0.10);
 }
 
 footer a {
-    color: var(--text-dark);
+    color: #ffe7c2;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
 }
 
 footer a:hover {
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
-/* 🌐 Estilo do Banner */
-#banner {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Ocupa toda a altura da tela */
-    background: url('img/banner-rural.jpg') no-repeat center center/cover; /* Ajusta a imagem do banner */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-align: center;
-    font-family: 'Georgia', serif;
-    overflow: hidden;
-}
-
-.banner-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.banner-overlay h1 {
-    font-size: 3rem;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    margin-bottom: 10px;
-}
-
-.banner-overlay p {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
-
-.banner-buttons {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-}
-
-.banner-buttons .btn {
-    background-color: #8c6a43;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.banner-buttons .btn:hover {
-    background-color: #6b4226;
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* 🌐 Responsividade Melhorada */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px;
+/* --- Responsividade --- */
+@media (max-width: 1200px) {
+    #banner {
+        min-height: 50vh;
+        height: 60vh;
+        max-height: 500px;
     }
+    .banner-overlay {
+        padding: 32px 18px 18px 24px;
+        max-width: 90vw;
+    }
+    .carousel img {
+        width: 220px;
+        height: 140px;
+    }
+}
 
+@media (max-width: 900px) {
     header nav ul {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
+        padding: 0 10px;
     }
-
-    section {
-        padding: 30px 15px;
+    .banner-overlay {
+        padding: 18px 10px 12px 14px;
+        max-width: 98vw;
+        margin-bottom: 10px;
     }
-
-    section h2 {
-        font-size: 1.8rem;
-    }
-
-    section p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        padding: 10px;
-    }
-
-    header nav ul {
-        gap: 5px;
-    }
-
-    section {
-        padding: 20px 10px;
-    }
-
-    section h2 {
+    .banner-overlay h1 {
         font-size: 1.5rem;
     }
-
-    section p {
-        font-size: 0.9rem;
+    .banner-overlay p {
+        font-size: 1rem;
     }
+    section {
+        padding: 18px 4px 12px 4px;
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+    .carousel img {
+        width: 120px;
+        height: 70px;
+    }
+    .noticia-card {
+        padding: 16px 8px;
+        min-width: unset;
+        max-width: 100%;
+    }
+    .container, .row {
+        padding: 0 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 8px 0 6px 0;
+    }
+    .banner-overlay {
+        padding: 8px 2px 4px 6px;
+        max-width: 99vw;
+    }
+    .banner-overlay h1 {
+        font-size: 1.1rem;
+    }
+    .banner-overlay p {
+        font-size: 0.85rem;
+    }
+    .banner-buttons .btn {
+        font-size: 0.85rem;
+        padding: 6px 8px;
+    }
+    section h2 {
+        font-size: 1rem;
+        padding: 7px 12px 7px 10px;
+        margin-left: -10px;
+        border-left-width: 5px;
+        border-right-width: 1.5px;
+    }
+    section {
+        padding: 10px 2px 8px 2px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+    section::before {
+        width: 4px;
+        top: 6px;
+        bottom: 6px;
+    }
+    .carousel img {
+        width: 70px;
+        height: 40px;
+    }
+    .noticia-card {
+        padding: 10px 2px;
+    }
+    input, textarea, select {
+        font-size: 0.95rem;
+        padding: 7px;
+    }
+    .formulario {
+        padding: 8px 2px;
+    }
+    #acessibilidade {
+        top: 8px;
+        right: 8px;
+        gap: 6px;
+    }
+    footer {
+        font-size: 0.85rem;
+        padding: 12px 2px 8px 2px;
+    }
+    .container, .row {
+        padding: 0 2px;
+    }
+}
+
+/* Ajuste para garantir que imagens e vídeos não estourem o layout */
+img, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
