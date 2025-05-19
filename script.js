@@ -75,3 +75,22 @@ carousel.addEventListener('mouseleave', () => {
     isScrolling = false;
     carouselInterval = setInterval(autoScrollCarousel, 3000);
 });
+
+// Destaque automático da seção visível na tela
+const sections = document.querySelectorAll('main section[id], #festejando');
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('section-ativa');
+      } else {
+        entry.target.classList.remove('section-ativa');
+      }
+    });
+  },
+  {
+    threshold: 0.5 // 50% da seção visível já ativa o destaque
+  }
+);
+
+sections.forEach(section => observer.observe(section));
