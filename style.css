@@ -165,6 +165,7 @@ section {
     text-align: center;
     box-shadow: 0 6px 18px rgba(124,90,55,0.10);
     max-width: 1100px;
+    transition: box-shadow 0.3s, border-color 0.3s, background 0.3s, filter 0.3s;
 }
 
 body.dark-mode section {
@@ -193,6 +194,32 @@ section p {
 
 body.dark-mode section h2, body.dark-mode section p {
     color: var(--text-dark);
+}
+
+section,
+#festejando {
+    transition: box-shadow 0.3s, border-color 0.3s, background 0.3s, filter 0.3s;
+}
+
+.section-ativa,
+section:target,
+#festejando.section-ativa,
+#festejando:target {
+    box-shadow: 0 0 0 4px var(--accent-color), 0 18px 48px 0 rgba(124,90,55,0.22), 0 2px 12px rgba(0,0,0,0.13) !important;
+    border-color: var(--accent-color) !important;
+    background: linear-gradient(100deg, #fffbe9 80%, #ffe7c2 100%) !important;
+    filter: brightness(1.04) saturate(1.1) !important;
+    z-index: 2;
+}
+
+body.dark-mode .section-ativa,
+body.dark-mode section:target,
+body.dark-mode #festejando.section-ativa,
+body.dark-mode #festejando:target {
+    background: linear-gradient(100deg, #2a2318 80%, #7c5a37 100%) !important;
+    border-color: #ffe7c2 !important;
+    box-shadow: 0 0 0 4px #ffe7c2, 0 18px 48px 0 rgba(124,90,55,0.22), 0 2px 12px rgba(0,0,0,0.13) !important;
+    filter: brightness(1.08) saturate(1.2) !important;
 }
 
 /* --- Cards e Notícias --- */
@@ -412,36 +439,54 @@ footer a:hover {
     }
 }
 
+/* --- Responsividade e Estilo Moderno para Telas Menores --- */
 @media (max-width: 900px) {
     header nav ul {
         flex-direction: column;
         gap: 12px;
         padding: 0 10px;
+        background: rgba(124,90,55,0.95);
+        border-radius: 12px;
+        margin-top: 10px;
+        box-shadow: 0 2px 12px rgba(124,90,55,0.13);
     }
     .banner-overlay {
         padding: 18px 10px 12px 14px;
         max-width: 98vw;
         margin-bottom: 10px;
+        border-radius: 0 0 18px 0;
+        background: rgba(60,40,20,0.7);
+        box-shadow: 0 4px 18px rgba(60,40,20,0.13);
     }
     .banner-overlay h1 {
         font-size: 1.5rem;
+        text-align: center;
     }
     .banner-overlay p {
         font-size: 1rem;
+        text-align: center;
+    }
+    .banner-buttons {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
     }
     section {
         padding: 18px 4px 12px 4px;
         margin-top: 24px;
         margin-bottom: 24px;
+        border-radius: 14px;
     }
     .carousel img {
         width: 120px;
         height: 70px;
+        border-radius: 10px;
     }
     .noticia-card {
         padding: 16px 8px;
         min-width: unset;
         max-width: 100%;
+        border-radius: 10px;
     }
     .container, .row {
         padding: 0 5px;
@@ -451,51 +496,77 @@ footer a:hover {
 @media (max-width: 600px) {
     header {
         padding: 8px 0 6px 0;
+        border-radius: 0 0 18px 18px;
+        box-shadow: 0 2px 12px rgba(124,90,55,0.13);
     }
     .banner-overlay {
         padding: 8px 2px 4px 6px;
         max-width: 99vw;
+        margin-bottom: 0;
+        border-radius: 0 0 10px 0;
     }
     .banner-overlay h1 {
         font-size: 1.1rem;
+        text-align: center;
+        letter-spacing: 1px;
     }
     .banner-overlay p {
         font-size: 0.85rem;
+        text-align: center;
     }
     .banner-buttons .btn {
-        font-size: 0.85rem;
-        padding: 6px 8px;
+        font-size: 0.95rem;
+        padding: 8px 12px;
+        border-radius: 18px;
+        width: 90vw;
+        max-width: 320px;
+        margin: 0 auto;
+        box-shadow: 0 2px 8px rgba(124,90,55,0.10);
+    }
+    .banner-buttons {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
     }
     section h2 {
-        font-size: 1rem;
+        font-size: 1.1rem;
         padding: 7px 12px 7px 10px;
         margin-left: -10px;
         border-left-width: 5px;
         border-right-width: 1.5px;
+        border-radius: 0 10px 10px 0;
+        background: linear-gradient(90deg, #bfa074 60%, #fff8ef 100%);
+        box-shadow: 1px 2px 8px rgba(124,90,55,0.10);
     }
     section {
         padding: 10px 2px 8px 2px;
         margin-top: 12px;
         margin-bottom: 12px;
+        border-radius: 8px;
     }
     section::before {
         width: 4px;
         top: 6px;
         bottom: 6px;
+        border-radius: 4px;
     }
     .carousel img {
-        width: 70px;
-        height: 40px;
+        width: 90px;
+        height: 50px;
+        border-radius: 6px;
     }
     .noticia-card {
         padding: 10px 2px;
+        border-radius: 6px;
     }
     input, textarea, select {
         font-size: 0.95rem;
         padding: 7px;
+        border-radius: 6px;
     }
     .formulario {
         padding: 8px 2px;
+        border-radius: 8px;
     }
     #acessibilidade {
         top: 8px;
@@ -505,6 +576,7 @@ footer a:hover {
     footer {
         font-size: 0.85rem;
         padding: 12px 2px 8px 2px;
+        border-radius: 8px 8px 0 0;
     }
     .container, .row {
         padding: 0 2px;
@@ -518,4 +590,18 @@ img, iframe {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 8px;
+}
+
+/* Estilo extra para links e botões em telas pequenas */
+@media (max-width: 600px) {
+    a, .btn, button {
+        font-size: 1rem;
+        border-radius: 8px;
+        padding: 8px 10px;
+    }
+    .noticia-card ul li a {
+        font-size: 0.95rem;
+        padding-bottom: 1px;
+    }
 }
