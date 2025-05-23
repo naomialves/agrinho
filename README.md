@@ -31,6 +31,13 @@ Acesse o site publicado em:
 #noticias rurais
 -[Notícias Agrícolas}.(https://www.noticiasagricolas.com.br/)
 -[Agrolink].(https://www.agrolink.com.br/)
+
+
+
+
+##imagens
+-https://pixabay.com/pt/images/search/campo/
+
 ## Como clonar e rodar localmente
 
 ```bash
