@@ -14,22 +14,22 @@ Este site foi desenvolvido para o projeto **Agrinho 2025**, com o tema **"Festej
 
 - Design responsivo e moderno
 - Alternância entre **modo claro** e **modo escuro**
-- Carrossel de imagens
-- Galeria com efeito lightbox
-- Efeitos visuais como parallax
-- Navegação suave e botão "Voltar ao topo"
-- Seções informativas sobre o campo e a cidade
+- Carrossel de imagens automático e interativo
+- Galeria com efeito lightbox: clique na imagem para ampliar e veja a origem ao passar o mouse
+- Destaque visual em todas as seções do site
+- Efeitos visuais como parallax e destaque de seção visível
+- Navegação suave para links internos
+- Botões de acessibilidade para ajuste de fonte
+- Seções informativas sobre o campo, cidade, festejos, notícias e contato
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
 - **HTML5**
-- **CSS3**
-- **JavaScript**
+- **CSS3** (customizado, sem frameworks)
+- **JavaScript** (vanilla)
 - **GitHub Pages** (hospedagem)
-- [SwiperJS](https://swiperjs.com/) (carrossel)
-- [AOS (Animate On Scroll)](https://michalsnik.github.io/aos/) (animações de rolagem)
 
 ---
 
@@ -47,6 +47,8 @@ Este site foi desenvolvido para o projeto **Agrinho 2025**, com o tema **"Festej
 ## 📷 Imagens
 
 - [Pixabay – Campo](https://pixabay.com/pt/images/search/campo/)
+- [Pixabay – Cidade](https://pixabay.com/pt/images/search/cidade/)
+-  imagens livres de direitos autorais
 
 ---
 
