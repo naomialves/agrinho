@@ -1,4 +1,6 @@
-/* --- Estilo Rústico e Sofisticado --- */
+/* =========================
+   VARIÁVEIS E BASE
+   ========================= */
 :root {
     --bg-color: #f6f1e7;
     --text-color: #3e2c1a;
@@ -12,13 +14,15 @@
     --linen-pattern: url('img/linen.png');
 }
 
+/* =========================
+   BODY E FUNDOS
+   ========================= */
 body {
     font-family: 'Merriweather', 'Georgia', serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     margin: 0;
     padding: 0;
-    transition: background-color 0.3s, color 0.3s;
     line-height: 1.7;
     font-size: 16px;
     background-image: var(--wood-pattern), var(--linen-pattern);
@@ -26,6 +30,7 @@ body {
     background-attachment: fixed;
     background-blend-mode: multiply;
     position: relative;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 body::before {
@@ -47,7 +52,49 @@ body.dark-mode::before {
     background: rgba(44, 36, 24, 0.85);
 }
 
-/* --- Banner Rústico --- */
+/* =========================
+   HEADER E NAVEGAÇÃO
+   ========================= */
+header {
+    background: rgba(124, 90, 55, 0.97);
+    padding: 18px 0 10px 0;
+    border-bottom: 5px solid var(--secondary-color);
+    font-family: 'Merriweather', 'Georgia', serif;
+    box-shadow: 0 4px 16px rgba(60,40,20,0.10);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 28px;
+    margin: 0;
+    padding: 0 32px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #ffe7c2;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+
+header nav a:hover,
+header nav a:focus {
+    background: var(--secondary-color);
+    color: #3e2c1a;
+    outline: 2px solid var(--focus-outline);
+}
+
+/* =========================
+   BANNER
+   ========================= */
 #banner {
     position: relative;
     width: 100vw;
@@ -78,7 +125,6 @@ body.dark-mode::before {
 
 .banner-overlay h1 {
     font-size: 3.2rem;
-    font-family: 'Merriweather', 'Georgia', serif;
     color: #ffe7c2;
     margin-bottom: 12px;
     text-shadow: 2px 2px 8px #7c5a37;
@@ -111,51 +157,17 @@ body.dark-mode::before {
     transition: background 0.3s, color 0.3s, transform 0.2s;
 }
 
-.banner-buttons .btn:hover, .banner-buttons .btn:focus {
+.banner-buttons .btn:hover,
+.banner-buttons .btn:focus {
     background: linear-gradient(90deg, #7c5a37 60%, #bfa074 100%);
     color: #fff;
     outline: 2px solid var(--focus-outline);
     transform: scale(1.07);
 }
 
-/* --- Header Rústico --- */
-header {
-    background: rgba(124, 90, 55, 0.97);
-    padding: 18px 0 10px 0;
-    border-bottom: 5px solid var(--secondary-color);
-    font-family: 'Merriweather', 'Georgia', serif;
-    box-shadow: 0 4px 16px rgba(60,40,20,0.10);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-header nav ul {
-    list-style-type: none;
-    display: flex;
-    gap: 28px;
-    margin: 0;
-    padding: 0 32px;
-}
-
-header nav a {
-    text-decoration: none;
-    color: #ffe7c2;
-    font-weight: 600;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    padding: 6px 12px;
-    border-radius: 8px;
-    transition: background 0.2s, color 0.2s;
-}
-
-header nav a:hover, header nav a:focus {
-    background: var(--secondary-color);
-    color: #3e2c1a;
-    outline: 2px solid var(--focus-outline);
-}
-
-/* --- Seções Gerais --- */
+/* =========================
+   SEÇÕES GERAIS
+   ========================= */
 section {
     background: rgba(255, 250, 240, 0.93);
     border: 2px solid var(--secondary-color);
@@ -166,6 +178,8 @@ section {
     box-shadow: 0 6px 18px rgba(124,90,55,0.10);
     max-width: 1100px;
     transition: box-shadow 0.3s, border-color 0.3s, background 0.3s, filter 0.3s;
+    position: relative;
+    z-index: 1;
 }
 
 body.dark-mode section {
@@ -192,15 +206,12 @@ section p {
     font-family: 'Georgia', serif;
 }
 
-body.dark-mode section h2, body.dark-mode section p {
+body.dark-mode section h2,
+body.dark-mode section p {
     color: var(--text-dark);
 }
 
-section,
-#festejando {
-    transition: box-shadow 0.3s, border-color 0.3s, background 0.3s, filter 0.3s;
-}
-
+/* Destaque de seção ativa */
 .section-ativa,
 section:target,
 #festejando.section-ativa,
@@ -222,7 +233,9 @@ body.dark-mode #festejando:target {
     filter: brightness(1.08) saturate(1.2) !important;
 }
 
-/* --- Cards e Notícias --- */
+/* =========================
+   CARDS DE NOTÍCIAS
+   ========================= */
 .noticia-card {
     background: #fff8ef;
     border: 2px solid var(--secondary-color);
@@ -278,7 +291,9 @@ body.dark-mode .noticia-card {
     outline: none;
 }
 
-/* --- Inputs e Formulários --- */
+/* =========================
+   FORMULÁRIOS E INPUTS
+   ========================= */
 input, textarea, select {
     background: #fff8ef;
     color: #3e2c1a;
@@ -297,18 +312,24 @@ input:focus, textarea:focus, select:focus {
     outline: none;
 }
 
-body.dark-mode input, body.dark-mode textarea, body.dark-mode select {
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
     background: #2a2318;
     color: var(--text-dark);
     border-color: var(--secondary-color);
 }
 
-body.dark-mode input:focus, body.dark-mode textarea:focus, body.dark-mode select:focus {
+body.dark-mode input:focus,
+body.dark-mode textarea:focus,
+body.dark-mode select:focus {
     border-color: var(--secondary-color);
     box-shadow: 0 0 8px var(--secondary-color);
 }
 
-/* --- Botões --- */
+/* =========================
+   BOTÕES
+   ========================= */
 button, .btn {
     background: linear-gradient(90deg, #bfa074 60%, #7c5a37 100%);
     color: #3e2c1a;
@@ -334,7 +355,9 @@ button:hover, .btn:hover {
     transform: scale(1.07);
 }
 
-/* --- Acessibilidade e Tema --- */
+/* =========================
+   ACESSIBILIDADE E TEMA
+   ========================= */
 #acessibilidade {
     position: fixed;
     top: 24px;
@@ -362,7 +385,9 @@ button:hover, .btn:hover {
     color: #3e2c1a;
 }
 
-/* --- Carrossel --- */
+/* =========================
+   CARROSSEL DE IMAGENS
+   ========================= */
 .carousel {
     display: flex;
     overflow-x: auto;
@@ -397,7 +422,9 @@ button:hover, .btn:hover {
     box-shadow: 0 8px 24px rgba(124,90,55,0.18);
 }
 
-/* --- Footer --- */
+/* =========================
+   FOOTER
+   ========================= */
 footer {
     background: linear-gradient(90deg, #7c5a37 60%, #bfa074 100%);
     color: #fff8ef;
@@ -422,7 +449,9 @@ footer a:hover {
     color: var(--primary-color);
 }
 
-/* --- Responsividade --- */
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
 @media (max-width: 1200px) {
     #banner {
         min-height: 50vh;
@@ -439,7 +468,6 @@ footer a:hover {
     }
 }
 
-/* --- Responsividade e Estilo Moderno para Telas Menores --- */
 @media (max-width: 900px) {
     header nav ul {
         flex-direction: column;
@@ -458,13 +486,15 @@ footer a:hover {
         background: rgba(60,40,20,0.7);
         box-shadow: 0 4px 18px rgba(60,40,20,0.13);
     }
+    .banner-overlay h1,
+    .banner-overlay p {
+        text-align: center;
+    }
     .banner-overlay h1 {
         font-size: 1.5rem;
-        text-align: center;
     }
     .banner-overlay p {
         font-size: 1rem;
-        text-align: center;
     }
     .banner-buttons {
         flex-direction: column;
@@ -507,12 +537,10 @@ footer a:hover {
     }
     .banner-overlay h1 {
         font-size: 1.1rem;
-        text-align: center;
         letter-spacing: 1px;
     }
     .banner-overlay p {
         font-size: 0.85rem;
-        text-align: center;
     }
     .banner-buttons .btn {
         font-size: 0.95rem;
@@ -543,12 +571,6 @@ footer a:hover {
         margin-top: 12px;
         margin-bottom: 12px;
         border-radius: 8px;
-    }
-    section::before {
-        width: 4px;
-        top: 6px;
-        bottom: 6px;
-        border-radius: 4px;
     }
     .carousel img {
         width: 90px;
@@ -581,20 +603,6 @@ footer a:hover {
     .container, .row {
         padding: 0 2px;
     }
-}
-
-/* Ajuste para garantir que imagens e vídeos não estourem o layout */
-img, iframe {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 8px;
-}
-
-/* Estilo extra para links e botões em telas pequenas */
-@media (max-width: 600px) {
     a, .btn, button {
         font-size: 1rem;
         border-radius: 8px;
@@ -604,4 +612,86 @@ img, iframe {
         font-size: 0.95rem;
         padding-bottom: 1px;
     }
+}
+
+/* =========================
+   AJUSTES GERAIS
+   ========================= */
+img, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+}
+
+/* === Destaque visual para todas as seções === */
+section {
+    box-shadow: 0 0 0 4px var(--accent-color), 0 6px 18px rgba(124,90,55,0.10);
+    border-color: var(--accent-color);
+    position: relative;
+    z-index: 1;
+}
+
+/* === Hover nas imagens: mostra a origem === */
+.img-origem-hover {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.img-origem-hover::after {
+    content: attr(data-origem);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(44,36,24,0.85);
+    color: #ffe7c2;
+    font-size: 1rem;
+    padding: 8px 0;
+    opacity: 0;
+    pointer-events: none;
+    text-align: center;
+    transition: opacity 0.3s;
+    border-radius: 0 0 8px 8px;
+    z-index: 2;
+}
+
+.img-origem-hover:hover::after,
+.img-origem-hover:focus::after {
+    opacity: 1;
+}
+
+/* === Lightbox de imagem === */
+.img-lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 20, 10, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    cursor: zoom-out;
+    animation: fadeIn 0.2s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+.img-lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    background: #fff;
+    padding: 8px;
+}
+.img-lightbox-overlay .img-lightbox-caption {
+    color: #ffe7c2;
+    text-align: center;
+    margin-top: 18px;
+    font-size: 1.1rem;
+    text-shadow: 0 2px 8px #000;
 }
