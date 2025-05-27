@@ -52,6 +52,12 @@ Este site foi desenvolvido para o projeto **Agrinho 2025**, com o tema **"Festej
 
 ---
 
+## Ajuda com a produção dos sites
+
+- [CHATGPT - CORREÇÃO].(https://chatgpt.com/)
+
+  ---
+  
 ## 🖥️ Como clonar e rodar localmente
 
 ```bash
