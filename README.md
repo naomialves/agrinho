@@ -52,7 +52,7 @@ Este site foi desenvolvido para o projeto **Agrinho 2025**, com o tema **"Festej
 
 ---
 
-## Ajuda com a produção do site
+## 🤝 Ajuda com a produção do site
 
 - [CHATGPT - CORREÇÃO].(https://chatgpt.com/)
 
