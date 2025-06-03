@@ -1,16 +1,26 @@
 // =========================
-// ACESSIBILIDADE: TAMANHO DA FONTE
+// ACESSIBILIDADE: TAMANHO DA FONTE (incremental)
 // =========================
 const aumentarFonteBtn = document.getElementById('aumentar-fonte');
 const diminuirFonteBtn = document.getElementById('diminuir-fonte');
+const root = document.documentElement;
+let fonteAtual = 16;
+
+function atualizarFonte(tam) {
+    root.style.setProperty('--user-font-size', tam + 'px');
+}
 
 aumentarFonteBtn.addEventListener('click', () => {
-    document.body.style.fontSize = '1.2em';
+    fonteAtual = Math.min(fonteAtual + 2, 28);
+    atualizarFonte(fonteAtual);
+});
+diminuirFonteBtn.addEventListener('click', () => {
+    fonteAtual = Math.max(fonteAtual - 2, 12);
+    atualizarFonte(fonteAtual);
 });
 
-diminuirFonteBtn.addEventListener('click', () => {
-    document.body.style.fontSize = '0.9em';
-});
+// Inicializa o tamanho da fonte ao carregar
+atualizarFonte(fonteAtual);
 
 // =========================
 // TEMA CLARO/ESCURO
@@ -37,6 +47,18 @@ toggleThemeButton.addEventListener('click', () => {
 });
 
 // =========================
+// ALTO CONTRASTE
+// =========================
+const altoContrasteBtn = document.getElementById('alto-contraste');
+altoContrasteBtn.addEventListener('click', () => {
+    document.body.classList.toggle('alto-contraste');
+    // Remove dark-mode se alto contraste for ativado
+    if (document.body.classList.contains('alto-contraste')) {
+        document.body.classList.remove('dark-mode');
+    }
+});
+
+// =========================
 // FEEDBACK VISUAL FORMULÁRIO
 // =========================
 document.querySelectorAll("form input, form textarea").forEach(input => {
@@ -48,6 +70,31 @@ document.querySelectorAll("form input, form textarea").forEach(input => {
         input.style.borderColor = "";
         input.style.boxShadow = "";
     });
+});
+
+// =========================
+// FEEDBACK DE ENVIO DO FORMULÁRIO
+// =========================
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form[action*="formsubmit"]');
+    if (form) {
+        form.addEventListener('submit', function (e) {
+            // Exibe mensagem de obrigada e impede envio real para visualização local
+            if (!form.querySelector('.form-obrigada')) {
+                e.preventDefault();
+                const span = document.createElement('span');
+                span.className = 'form-obrigada';
+                span.textContent = 'Obrigada pelo contato!';
+                span.style.display = 'block';
+                span.style.margin = '18px 0 0 0';
+                span.style.fontWeight = 'bold';
+                span.style.color = 'var(--primary-color)';
+                span.style.fontSize = '1.2em';
+                form.appendChild(span);
+                setTimeout(() => { span.remove(); }, 4000);
+            }
+        });
+    }
 });
 
 // =========================
@@ -123,10 +170,11 @@ function criarLightbox(src, alt, origem) {
     img.alt = alt || '';
     overlay.appendChild(img);
 
+    // Mostra a fonte/origem da imagem de forma clara
     if (origem) {
         const caption = document.createElement('div');
         caption.className = 'img-lightbox-caption';
-        caption.textContent = origem;
+        caption.textContent = 'Fonte: ' + origem;
         overlay.appendChild(caption);
     }
 
@@ -154,3 +202,26 @@ document.querySelectorAll('img[data-origem]').forEach(img => {
         }
     });
 });
+
+// =========================
+// MENU HAMBURGUER MOBILE
+// =========================
+const menuToggle = document.getElementById('menu-toggle');
+const menuList = document.getElementById('menu-list');
+
+if (menuToggle && menuList) {
+    menuToggle.addEventListener('click', function () {
+        const aberto = menuList.classList.toggle('menu-open');
+        menuToggle.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+    });
+
+    // Fecha o menu ao clicar em um link
+    menuList.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 900) {
+                menuList.classList.remove('menu-open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+}

@@ -12,15 +12,14 @@ Este site foi desenvolvido para o projeto **Agrinho 2025**, com o tema **"Festej
 
 ## 🚀 Recursos e Funcionalidades
 
-- Design responsivo e moderno
-- Alternância entre **modo claro** e **modo escuro**
-- Carrossel de imagens automático e interativo
-- Galeria com efeito lightbox: clique na imagem para ampliar e veja a origem ao passar o mouse
-- Destaque visual em todas as seções do site
-- Efeitos visuais como parallax e destaque de seção visível
-- Navegação suave para links internos
-- Botões de acessibilidade para ajuste de fonte
-- Seções informativas sobre o campo, cidade, festejos, notícias e contato
+- Design totalmente responsivo, sem rolagem lateral em dispositivos móveis
+- Alternância entre **modo claro**, **modo escuro** e **alto contraste**
+- Ajuste de tamanho de fonte para acessibilidade
+- Carrossel de imagens interativo e galeria com efeito lightbox 
+- Destaque visual para seções ativas e navegação suave entre âncoras
+- Seções informativas sobre campo, cidade, festejos, notícias e contato
+- Formulário de contato funcional com proteção contra spam
+- Código limpo, sem frameworks, apenas HTML5, CSS3 e JavaScript puro
 
 ---
 
@@ -48,16 +47,17 @@ Este site foi desenvolvido para o projeto **Agrinho 2025**, com o tema **"Festej
 
 - [Pixabay – Campo](https://pixabay.com/pt/images/search/campo/)
 - [Pixabay – Cidade](https://pixabay.com/pt/images/search/cidade/)
--  imagens livres de direitos autorais
+- Imagens livres de direitos autorais
 
 ---
 
-## 🤝 Ajuda com a produção do site
+## 🤝 Créditos e Ajuda
 
-- [CHATGPT - CORREÇÃO].(https://chatgpt.com/)
+- [ChatGPT – Correção e sugestões de código](https://chat.openai.com/)
+- [Sistema CNA/Senar – Vídeo educativo](https://www.youtube.com/@sistemacnasenar)
 
-  ---
-  
+---
+
 ## 🖥️ Como clonar e rodar localmente
 
 ```bash
