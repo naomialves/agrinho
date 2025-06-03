@@ -1,6 +1,7 @@
-# Site Agrinho 2025 – Festejando a Conexão Campo-Cidade
+# 🌾 Agrinho 2025 - Conexão Campo-Cidade
 
-Este site foi desenvolvido para o projeto **Agrinho 2025**, com o tema **"Festejando a Conexão Campo-Cidade"**. O objetivo é destacar a importância da união entre o meio rural e urbano, promovendo a valorização das duas realidades.
+
+Site desenvolvido para o projeto Agrinho 2025, com o tema "Festejando a Conexão Campo-Cidade", promovendo a valorização das relações entre o meio rural e urbano através de uma abordagem interativa, educativa e visualmente moderna.
 
 ---
 
