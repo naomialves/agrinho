@@ -7,6 +7,7 @@ Este site foi desenvolvido para o projeto **Agrinho 2025**, com o tema **"Festej
 ## 🌐 Acesse o site
 
 [https://naomialves.github.io/agrinho/](https://naomialves.github.io/agrinho/)
+[https://agrinho-nine-beige.vercel.app/](https://agrinho-nine-beige.vercel.app/)
 
 ---
 
