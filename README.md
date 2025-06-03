@@ -45,10 +45,12 @@ Este site foi desenvolvido para o projeto **Agrinho 2025**, com o tema **"Festej
 
 ---
 
-## 📷 Imagens
+## 📷 Imagens e Videos
 
 - [Pixabay – Campo](https://pixabay.com/pt/images/search/campo/)
 - [Pixabay – Cidade](https://pixabay.com/pt/images/search/cidade/)
+- [Sistema CNA/Senar – Vídeo educativo](https://www.youtube.com/@sistemacnasenar)
+
 - Imagens livres de direitos autorais
 
 ---
@@ -56,8 +58,7 @@ Este site foi desenvolvido para o projeto **Agrinho 2025**, com o tema **"Festej
 ## 🤝 Créditos e Ajuda
 
 - [ChatGPT – Correção e sugestões de código](https://chat.openai.com/)
-- [Sistema CNA/Senar – Vídeo educativo](https://www.youtube.com/@sistemacnasenar)
-
+- 
 ---
 
 ## 🖥️ Como clonar e rodar localmente
