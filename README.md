@@ -56,10 +56,10 @@ Site desenvolvido para o projeto Agrinho 2025, com o tema "Festejando a Conexão
 
 ---
 
-## 🤝 Créditos e Ajuda
+## 🤝 Ajuda e correção ortográfica
 
 - [ChatGPT – Correção e sugestões de código](https://chat.openai.com/)
-- 
+  
 ---
 
 ## 🖥️ Como clonar e rodar localmente
