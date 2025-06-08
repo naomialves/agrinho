@@ -9,6 +9,11 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
 </head>
 <body>
     <!-- Header -->
@@ -56,21 +61,34 @@
     <!-- Main Content -->
     <main>
         <!-- Seção Início -->
-        <section id="inicio" aria-label="Início">
+        <section id="inicio" aria-label="Início" data-aos="fade-up">
             <div class="container text-center">
-                <h1>Bem-vindo à Conexão Campo-Cidade</h1>
+                <h1>
+                  <i class="fa-solid fa-seedling"></i>
+                  Bem-vindo à Conexão Campo-Cidade
+                </h1>
+                <!-- Alerta Bootstrap -->
+                <div class="alert alert-success" role="alert">
+                  <i class="fa-solid fa-circle-info"></i>
+                  Aproveite para conhecer as novidades sobre o campo e a cidade!
+                </div>
                 <p>Explore a harmonia entre o campo e a cidade.</p>
-                <a href="#campo" class="btn btn-primary">Saiba Mais</a>
+                <a href="#campo" class="btn btn-primary">
+                  <i class="fa-solid fa-arrow-right"></i> Saiba Mais
+                </a>
             </div>
         </section>
 
         <!-- Seção Campo-Cidade -->
-        <section id="campo-cidade" class="my-5 pt-6 secao-campo-cidade" aria-label="Sobre o site">
+        <section id="campo-cidade" class="my-5 pt-6 secao-campo-cidade" aria-label="Sobre o site" data-aos="fade-right">
             <div class="container bloco-secao">
                 <div class="secao-img-bloco">
                     <figure>
                         <img src="img/2.png" class="rounded-pill img-origem-hover" alt="Imagem representativa" loading="lazy" data-origem="Pixabay – Representação">
-                        <figcaption class="img-caption">Fonte: Pixabay – Representação</figcaption>
+                        <figcaption class="img-caption">
+                          <i class="fa-solid fa-image"></i>
+                          Fonte: Pixabay – Representação
+                        </figcaption>
                     </figure>
                 </div>
                 <div class="secao-texto-bloco">
@@ -183,16 +201,58 @@ Entre esses processos destacam-se os de agrcultura familiar e feiras agroecologi
         </section>
 
         <!-- Seção Galeria -->
-        <section id="galeria" aria-label="Galeria">
-            <h2 class="text-center">Galeria</h2>
-            <div class="carousel">
-                <img src="img/galeria1.jpg" alt="Imagem de um campo verde" class="img-origem-hover" data-origem="Pixabay – Campo">
-                <img src="img/galeria2.jpg" alt="Imagem de uma cidade moderna" class="img-origem-hover" data-origem="Pixabay – Cidade">
-                <img src="img/galeria3.jpg" alt="Imagem de uma fazenda tradicional" class="img-origem-hover" data-origem="Pixabay – Campo">
-                <img src="img/galeria4.jpg" alt="Imagem de um mercado urbano" class="img-origem-hover" data-origem="Pixabay – Cidade">
-                <img src="img/galeria6.jpg" alt="Imagem de um evento na cidade" class="img-origem-hover" data-origem="Pixabay – Cidade">
-                <img src="img/galeria7.jpg" alt="Imagem de um pôr do sol no campo" class="img-origem-hover" data-origem="Pixabay – Campo">
-                <img src="img/galeria8.jpg" alt="Imagem de uma rua movimentada na cidade" class="img-origem-hover" data-origem="Pixabay – Cidade">
+        <section id="galeria" aria-label="Galeria" data-aos="zoom-in">
+            <h2 class="text-center">
+              <i class="fa-solid fa-images"></i>
+              Galeria
+            </h2>
+            <!-- Carousel Bootstrap -->
+            <div id="galeriaCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <a href="img/galeria1.jpg" data-lightbox="galeria" data-title="Imagem de um campo verde">
+                    <img src="img/galeria1.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de um campo verde" data-origem="Pixabay – Campo">
+                  </a>
+                </div>
+                <div class="carousel-item">
+                  <a href="img/galeria2.jpg" data-lightbox="galeria" data-title="Imagem de uma cidade moderna">
+                    <img src="img/galeria2.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de uma cidade moderna" data-origem="Pixabay – Cidade">
+                  </a>
+                </div>
+                <div class="carousel-item">
+                  <a href="img/galeria3.jpg" data-lightbox="galeria" data-title="Imagem de uma fazenda tradicional">
+                    <img src="img/galeria3.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de uma fazenda tradicional" data-origem="Pixabay – Campo">
+                  </a>
+                </div>
+                <div class="carousel-item">
+                  <a href="img/galeria4.jpg" data-lightbox="galeria" data-title="Imagem de um mercado urbano">
+                    <img src="img/galeria4.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de um mercado urbano" data-origem="Pixabay – Cidade">
+                  </a>
+                </div>
+                <div class="carousel-item">
+                  <a href="img/galeria6.jpg" data-lightbox="galeria" data-title="Imagem de um evento na cidade">
+                    <img src="img/galeria6.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de um evento na cidade" data-origem="Pixabay – Cidade">
+                  </a>
+                </div>
+                <div class="carousel-item">
+                  <a href="img/galeria7.jpg" data-lightbox="galeria" data-title="Imagem de um pôr do sol no campo">
+                    <img src="img/galeria7.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de um pôr do sol no campo" data-origem="Pixabay – Campo">
+                  </a>
+                </div>
+                <div class="carousel-item">
+                  <a href="img/galeria8.jpg" data-lightbox="galeria" data-title="Imagem de uma rua movimentada na cidade">
+                    <img src="img/galeria8.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de uma rua movimentada na cidade" data-origem="Pixabay – Cidade">
+                  </a>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#galeriaCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#galeriaCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+              </button>
             </div>
         </section>
 
@@ -231,5 +291,11 @@ Entre esses processos destacam-se os de agrcultura familiar e feiras agroecologi
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      AOS.init();
+</script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 </body>
 </html>
