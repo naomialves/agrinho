@@ -489,6 +489,23 @@ button:hover, .btn:hover {
 /* =========================
    CARROSSEL DE IMAGENS
    ========================= */
+/* Removido o scroll lateral para desktop/notebook */
+@media (min-width: 901px) {
+    .carousel {
+        display: flex;
+        gap: 18px;
+        padding: 24px 0;
+        overflow-x: visible;
+        justify-content: center;
+        align-items: center;
+        scroll-behavior: auto;
+    }
+    .carousel::-webkit-scrollbar,
+    .carousel::-webkit-scrollbar-thumb {
+        display: none;
+    }
+}
+
 .carousel {
     display: flex;
     overflow-x: auto;
@@ -521,6 +538,40 @@ button:hover, .btn:hover {
 .carousel img:hover {
     transform: scale(1.07);
     box-shadow: 0 8px 24px rgba(124,90,55,0.18);
+}
+
+/* Galeria de miniaturas aprimorada */
+.galeria-thumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+.galeria-thumbs a {
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(124,90,55,0.10);
+    border: 2px solid var(--secondary-color);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    width: 110px;
+    height: 70px;
+}
+.galeria-thumbs a:hover,
+.galeria-thumbs a:focus {
+    transform: scale(1.08);
+    box-shadow: 0 6px 18px rgba(124,90,55,0.18);
+    border-color: var(--accent-color);
+    outline: none;
+}
+.galeria-thumbs img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
 }
 
 /* =========================
