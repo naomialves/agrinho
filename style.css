@@ -1441,8 +1441,8 @@ section {
 
 /* Corrige possíveis conflitos de flexbox em .container e .bloco-secao */
 .container, .bloco-secao {
-    display: block !important;
-    /* Remove flex se não for necessário */
+    /* display: block !important; */
+    /* Remove esta linha para permitir o flex padrão */
 }
 
 /* Corrige possíveis problemas de display em .carousel */
