@@ -1,15 +1,15 @@
 // =========================
-// ACESSIBILIDADE: TAMANHO DA FONTE (incremental)
+// ACESSIBILIDADE: TAMANHO DA FONTE (apenas textos das seções)
 // =========================
 const aumentarFonteBtn = document.getElementById('aumentar-fonte');
 const diminuirFonteBtn = document.getElementById('diminuir-fonte');
-const root = document.documentElement;
 let fonteAtual = 16;
-
 function atualizarFonte(tam) {
-    root.style.setProperty('--user-font-size', tam + 'px');
+    // Aplica apenas nas seções principais
+    document.querySelectorAll('main section, main section *').forEach(el => {
+        el.style.fontSize = tam + 'px';
+    });
 }
-
 aumentarFonteBtn.addEventListener('click', () => {
     fonteAtual = Math.min(fonteAtual + 2, 28);
     atualizarFonte(fonteAtual);
@@ -18,8 +18,6 @@ diminuirFonteBtn.addEventListener('click', () => {
     fonteAtual = Math.max(fonteAtual - 2, 12);
     atualizarFonte(fonteAtual);
 });
-
-// Inicializa o tamanho da fonte ao carregar
 atualizarFonte(fonteAtual);
 
 // =========================
