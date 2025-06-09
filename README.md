@@ -126,4 +126,3 @@ Confira o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
 
-Se quiser adaptar ou acrescentar algo, é só pedir!
