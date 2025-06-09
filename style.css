@@ -1208,3 +1208,22 @@ html, body {
         display: none !important;
     }
 }
+
+/* =========================
+   ICONE DO FORMULÁRIO
+   ========================= */
+.form-group label i {
+    margin-right: 6px;
+    color: var(--secondary-color);
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+.formulario .btn i {
+    margin-right: 6px;
+    vertical-align: middle;
+}
+.formulario .mt-4 i {
+    margin-right: 6px;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
