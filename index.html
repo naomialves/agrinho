@@ -40,37 +40,6 @@
         max-width: 100vw;
         box-sizing: border-box;
       }
-      /* Estilos adicionais para a galeria e carrossel */
-      .galeria-carousel-custom .carousel-item {
-        transition: transform 0.5s ease;
-      }
-      .galeria-img {
-        object-fit: cover;
-        height: 400px;
-      }
-      /* Estilo para o overlay da lightbox */
-      .img-lightbox-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1050;
-      }
-      .img-lightbox-overlay img {
-        max-width: 90%;
-        max-height: 80%;
-      }
-      .img-lightbox-caption {
-        color: #fff;
-        text-align: center;
-        margin-top: 8px;
-        font-size: 0.9em;
-      }
     </style>
 </head>
 <body>
@@ -136,7 +105,7 @@
             </div>
         </section>
 
-        <section id="campo-cidade" class="my-5 pt-6 secao-campo-cidade" aria-label="Sobre o site" data-aos="fade-right" style="font-size: 1.35em;">
+        <section id="campo-cidade" class="my-5 pt-6 secao-campo-cidade" aria-label="Sobre o site" data-aos="fade-right">
             <div class="container bloco-secao">
                 <div class="secao-img-bloco">
                     <figure>
@@ -154,7 +123,7 @@
             </div>
         </section>
 
-        <section id="campo" class="my-5" aria-label="Campo" style="font-size: 1.35em;">
+        <section id="campo" class="my-5" aria-label="Campo">
             <div class="container bloco-secao">
                 <div class="secao-img-bloco">
                     <figure>
@@ -174,7 +143,7 @@
             </div>
         </section>
 
-        <section id="cidade" class="my-5" aria-label="Cidade" style="font-size: 1.35em;">
+        <section id="cidade" class="my-5" aria-label="Cidade">
             <div class="container bloco-secao">
                 <div class="secao-img-bloco">
                     <figure>
@@ -194,7 +163,7 @@
             </div>
         </section>
 
-        <section id="festejando" class="my-5" aria-label="Festejar" style="font-size: 1.35em;">
+        <section id="festejando" class="my-5" aria-label="Festejar">
             <div class="container bloco-secao">
                 <div class="secao-img-bloco">
                     <figure>
@@ -219,7 +188,7 @@ Entre esses processos destacam-se os de agricultura familiar e feiras agroecoló
             </div>
         </section>
 
-        <section id="noticias" class="my-5" aria-label="Notícias do Dia a Dia" style="font-size: 1.25em;">
+        <section id="noticias" class="my-5" aria-label="Notícias do Dia a Dia">
             <div class="container">
                 <h2 class="text-center">Notícias do Dia a Dia</h2>
                 <p class="text-center">Fique por dentro das últimas notícias sobre o campo e a cidade. Explore os principais acontecimentos e tendências que conectam esses dois mundos.</p>
@@ -270,11 +239,13 @@ Entre esses processos destacam-se os de agricultura familiar e feiras agroecoló
               <i class="fa-solid fa-images"></i>
               Galeria
             </h2>
-            <div id="galeriaCarousel" class="carousel slide mb-4 galeria-carousel-custom" data-bs-ride="carousel" data-bs-interval="3500">
+            <div id="galeriaCarousel" class="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="3000">
               <div class="carousel-inner">
                 <div class="carousel-item active">
                   <picture>
-                    <img src="img/galeria1.jpg" class="d-block w-100 img-origem-hover galeria-img" alt="Imagem de um campo verde, paisagem rural com gramado e árvores" data-origem="Pixabay – Campo" loading="lazy" tabindex="0">
+                    <a href="img/galeria1.jpg" data-lightbox="galeria" data-title="Imagem de um campo verde, paisagem rural com gramado e árvores">
+                      <img src="img/galeria1.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de um campo verde, paisagem rural com gramado e árvores" data-origem="Pixabay – Campo" loading="lazy">
+                    </a>
                   </picture>
                   <div class="carousel-caption d-none d-md-block">
                     <p>Imagem de um campo verde, paisagem rural com gramado e árvores</p>
@@ -282,7 +253,9 @@ Entre esses processos destacam-se os de agricultura familiar e feiras agroecoló
                 </div>
                 <div class="carousel-item">
                   <picture>
-                    <img src="img/galeria2.jpg" class="d-block w-100 img-origem-hover galeria-img" alt="Imagem de uma cidade moderna, prédios altos e céu azul" data-origem="Pixabay – Cidade" loading="lazy" tabindex="0">
+                    <a href="img/galeria2.jpg" data-lightbox="galeria" data-title="Imagem de uma cidade moderna, prédios altos e céu azul">
+                      <img src="img/galeria2.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de uma cidade moderna, prédios altos e céu azul" data-origem="Pixabay – Cidade" loading="lazy">
+                    </a>
                   </picture>
                   <div class="carousel-caption d-none d-md-block">
                     <p>Imagem de uma cidade moderna, prédios altos e céu azul</p>
@@ -290,7 +263,9 @@ Entre esses processos destacam-se os de agricultura familiar e feiras agroecoló
                 </div>
                 <div class="carousel-item">
                   <picture>
-                    <img src="img/galeria3.jpg" class="d-block w-100 img-origem-hover galeria-img" alt="Imagem de uma fazenda tradicional, com árvores e campo aberto" data-origem="Pixabay – Campo" loading="lazy" tabindex="0">
+                    <a href="img/galeria3.jpg" data-lightbox="galeria" data-title="Imagem de uma fazenda tradicional, com árvores e campo aberto">
+                      <img src="img/galeria3.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de uma fazenda tradicional, com árvores e campo aberto" data-origem="Pixabay – Campo" loading="lazy">
+                    </a>
                   </picture>
                   <div class="carousel-caption d-none d-md-block">
                     <p>Imagem de uma fazenda tradicional, com árvores e campo aberto</p>
@@ -298,7 +273,9 @@ Entre esses processos destacam-se os de agricultura familiar e feiras agroecoló
                 </div>
                 <div class="carousel-item">
                   <picture>
-                    <img src="img/galeria4.jpg" class="d-block w-100 img-origem-hover galeria-img" alt="Imagem de um mercado urbano, com barracas e pessoas" data-origem="Pixabay – Cidade" loading="lazy" tabindex="0">
+                    <a href="img/galeria4.jpg" data-lightbox="galeria" data-title="Imagem de um mercado urbano, com barracas e pessoas">
+                      <img src="img/galeria4.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de um mercado urbano, com barracas e pessoas" data-origem="Pixabay – Cidade" loading="lazy">
+                    </a>
                   </picture>
                   <div class="carousel-caption d-none d-md-block">
                     <p>Imagem de um mercado urbano, com barracas e pessoas</p>
@@ -306,7 +283,9 @@ Entre esses processos destacam-se os de agricultura familiar e feiras agroecoló
                 </div>
                 <div class="carousel-item">
                   <picture>
-                    <img src="img/galeria6.jpg" class="d-block w-100 img-origem-hover galeria-img" alt="Imagem de um evento na cidade, com palco e público" data-origem="Pixabay – Cidade" loading="lazy" tabindex="0">
+                    <a href="img/galeria6.jpg" data-lightbox="galeria" data-title="Imagem de um evento na cidade, com palco e público">
+                      <img src="img/galeria6.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de um evento na cidade, com palco e público" data-origem="Pixabay – Cidade" loading="lazy">
+                    </a>
                   </picture>
                   <div class="carousel-caption d-none d-md-block">
                     <p>Imagem de um evento na cidade, com palco e público</p>
@@ -314,7 +293,9 @@ Entre esses processos destacam-se os de agricultura familiar e feiras agroecoló
                 </div>
                 <div class="carousel-item">
                   <picture>
-                    <img src="img/galeria7.jpg" class="d-block w-100 img-origem-hover galeria-img" alt="Imagem de um pôr do sol no campo, com silhuetas de árvores" data-origem="Pixabay – Campo" loading="lazy" tabindex="0">
+                    <a href="img/galeria7.jpg" data-lightbox="galeria" data-title="Imagem de um pôr do sol no campo, com silhuetas de árvores">
+                      <img src="img/galeria7.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de um pôr do sol no campo, com silhuetas de árvores" data-origem="Pixabay – Campo" loading="lazy">
+                    </a>
                   </picture>
                   <div class="carousel-caption d-none d-md-block">
                     <p>Imagem de um pôr do sol no campo, com silhuetas de árvores</p>
@@ -322,7 +303,9 @@ Entre esses processos destacam-se os de agricultura familiar e feiras agroecoló
                 </div>
                 <div class="carousel-item">
                   <picture>
-                    <img src="img/galeria8.jpg" class="d-block w-100 img-origem-hover galeria-img" alt="Imagem de uma rua movimentada na cidade, com carros e pedestres" data-origem="Pixabay – Cidade" loading="lazy" tabindex="0">
+                    <a href="img/galeria8.jpg" data-lightbox="galeria" data-title="Imagem de uma rua movimentada na cidade, com carros e pedestres">
+                      <img src="img/galeria8.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de uma rua movimentada na cidade, com carros e pedestres" data-origem="Pixabay – Cidade" loading="lazy">
+                    </a>
                   </picture>
                   <div class="carousel-caption d-none d-md-block">
                     <p>Imagem de uma rua movimentada na cidade, com carros e pedestres</p>
@@ -543,42 +526,11 @@ Entre esses processos destacam-se os de agricultura familiar e feiras agroecoló
         });
       });
 
-      // Permite abrir imagem do carrossel e das seções em tela cheia/lightbox ao clicar ou pressionar enter/space
-      function criarLightbox(src, alt, origem) {
-        document.querySelectorAll('.img-lightbox-overlay').forEach(el => el.remove());
-        const overlay = document.createElement('div');
-        overlay.className = 'img-lightbox-overlay';
-        overlay.tabIndex = 0;
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = alt || '';
-        overlay.appendChild(img);
-        if (origem) {
-          const caption = document.createElement('div');
-          caption.className = 'img-lightbox-caption';
-          caption.textContent = 'Fonte: ' + origem;
-          overlay.appendChild(caption);
-        }
-        overlay.addEventListener('click', (e) => {
-          if (e.target === overlay) overlay.remove();
-        });
-        overlay.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape') overlay.remove();
-        });
-        document.body.appendChild(overlay);
-        overlay.focus();
-      }
-
-      document.querySelectorAll('img[data-origem]').forEach(img => {
-        img.classList.add('img-origem-hover');
-        img.setAttribute('tabindex', '0');
-        img.addEventListener('click', function () {
-          criarLightbox(this.src, this.alt, this.getAttribute('data-origem'));
-        });
-        img.addEventListener('keydown', function (e) {
-          if (e.key === 'Enter' || e.key === ' ') {
-            criarLightbox(this.src, this.alt, this.getAttribute('data-origem'));
-          }
+      // Permite abrir imagem do carrossel em tela cheia/lightbox ao clicar
+      document.querySelectorAll('#galeriaCarousel .carousel-item a[data-lightbox]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          // Permite o lightbox normalmente
+          e.stopPropagation();
         });
       });
 
@@ -605,4 +557,3 @@ Entre esses processos destacam-se os de agricultura familiar e feiras agroecoló
     </script>
 </body>
 </html>
-S
