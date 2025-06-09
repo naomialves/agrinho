@@ -533,6 +533,27 @@ Entre esses processos destacam-se os de agricultura familiar e feiras agroecoló
           e.stopPropagation();
         });
       });
+
+      // Ajuste do aumento/diminuição de fonte para afetar apenas textos das seções
+      (function() {
+        const aumentarFonteBtn = document.getElementById('aumentar-fonte');
+        const diminuirFonteBtn = document.getElementById('diminuir-fonte');
+        let fonteAtual = 16;
+        function atualizarFonte(tam) {
+          document.querySelectorAll('main section, main section *').forEach(el => {
+            el.style.fontSize = tam + 'px';
+          });
+        }
+        aumentarFonteBtn.addEventListener('click', function() {
+          fonteAtual = Math.min(fonteAtual + 2, 28);
+          atualizarFonte(fonteAtual);
+        });
+        diminuirFonteBtn.addEventListener('click', function() {
+          fonteAtual = Math.max(fonteAtual - 2, 12);
+          atualizarFonte(fonteAtual);
+        });
+        atualizarFonte(fonteAtual);
+      })();
     </script>
 </body>
 </html>
