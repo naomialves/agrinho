@@ -46,8 +46,8 @@ Site desenvolvido para o concurso **Agrinho 2025** destacando a conexão vital e
 
 ## 🖼️ Preview
 
-![Screenshot do site]![Background](https://github.com/user-attachments/assets/4eff11c5-d5dd-4e7a-9e2b-926e227d338f)
-![Screenshot do site]![Background]![background2](https://github.com/user-attachments/assets/c8f3a603-dced-4f85-909e-52a599bed1bb)
+![Screenshot do site modelo mobile]![Background](https://github.com/user-attachments/assets/4eff11c5-d5dd-4e7a-9e2b-926e227d338f)
+![Screenshot do site modelo para computador]![Background](https://github.com/user-attachments/assets/c8f3a603-dced-4f85-909e-52a599bed1bb)
 [Acesse o site publicado](https://agrinho-nine-beige.vercel.app/)
 
 ---
