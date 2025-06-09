@@ -62,3 +62,56 @@ O site oferece uma experiência interativa e informativa, celebrando o papel de 
    ```bash
    git clone https://github.com/naomialves/agrinho.git
    
+---
+
+##📁 Estrutura do projeto
+agrinho/
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   └── main.js
+├── assets/
+│   ├── img/
+│   │   └── background.jpg
+│   └── video/
+│       └── senar-video.mp4
+└── README.md
+
+##🖼️ Recursos utilizados
+- Imagem de fundo: retirada do site Pixabay – imagem livre para uso comercial, sem necessidade de atribuição (licença: Pixabay License)
+📸 Acesse a imagem original
+
+- Vídeo incorporado: do canal oficial do SENAR – utilizado com fins educacionais
+🎥 Ver vídeo no YouTube
+(Todos os direitos do vídeo pertencem ao SENAR.)
+
+---
+
+##🤝 Contribuições
+- Contribuições são sempre bem-vindas!
+
+- Faça um fork
+
+- Crie uma branch: git checkout -b minha-melhoria
+
+- Faça o commit: git commit -m "Melhoria: nova funcionalidade"
+
+- Envie a branch: git push origin minha-melhoria
+
+- Abra um Pull Request
+
+  
+  ---
+
+  
+  📄 Licença
+> Este projeto está sob a licença MIT – sinta-se livre para usar, modificar e distribuir.
+Confira o arquivo LICENSE para mais detalhes.
+
+---
+ 
+ ##👤 Autor
+- Naomi Alves
+- 📧 E-mail: seuemail@email.com
+- 🌐 GitHub: @naomialves
