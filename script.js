@@ -5,10 +5,8 @@ const aumentarFonteBtn = document.getElementById('aumentar-fonte');
 const diminuirFonteBtn = document.getElementById('diminuir-fonte');
 let fonteAtual = 16;
 function atualizarFonte(tam) {
-    // Aplica apenas nas seções principais
-    document.querySelectorAll('main section, main section *').forEach(el => {
-        el.style.fontSize = tam + 'px';
-    });
+    // Altera a variável CSS global para afetar toda a página
+    document.documentElement.style.setProperty('--user-font-size', tam + 'px');
 }
 aumentarFonteBtn.addEventListener('click', () => {
     fonteAtual = Math.min(fonteAtual + 2, 28);
