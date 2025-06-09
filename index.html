@@ -13,41 +13,70 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
-
+    <!-- Open Graph -->
+    <meta property="og:title" content="Conexão Campo-Cidade">
+    <meta property="og:description" content="Unindo o melhor do campo e da cidade para um futuro sustentável.">
+    <meta property="og:image" content="img/banner-rural.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agrinho-site-sucesso.vercel.app/">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Conexão Campo-Cidade">
+    <meta name="twitter:description" content="Unindo o melhor do campo e da cidade para um futuro sustentável.">
+    <meta name="twitter:image" content="img/banner-rural.jpg">
+    <style>
+      /* Evita scroll lateral em toda a página */
+      html, body {
+        overflow-x: hidden !important;
+      }
+      /* Garante que imagens não ultrapassem a largura do container */
+      img, picture, .banner-img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      /* Garante que containers não ultrapassem a largura da tela */
+      .container, .bloco-secao, .carousel, .carousel-inner, .carousel-item {
+        max-width: 100vw;
+        box-sizing: border-box;
+      }
+    </style>
 </head>
 <body>
-    <!-- Header -->
+    <a href="#main-content" class="skip-link" tabindex="0">Pular para o conteúdo principal</a>
     <header>
         <nav aria-label="Menu principal">
-            <button id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-list" class="menu-hamburguer">
+            <button id="menu-toggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu-list" class="menu-hamburguer">
                 <span class="hamburguer-bar"></span>
                 <span class="hamburguer-bar"></span>
                 <span class="hamburguer-bar"></span>
             </button>
             <ul class="nav" id="menu-list">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#campo">Campo</a></li>
-                <li><a href="#cidade">Cidade</a></li>
-                <li><a href="#festejando">Festejando</a></li>
-                <li><a href="#galeria">Galeria</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#inicio" aria-label="Ir para seção Início">Início</a></li>
+                <li><a href="#campo" aria-label="Ir para seção Campo">Campo</a></li>
+                <li><a href="#cidade" aria-label="Ir para seção Cidade">Cidade</a></li>
+                <li><a href="#festejando" aria-label="Ir para seção Festejar">Festejar</a></li>
+                <li><a href="#galeria" aria-label="Ir para seção Galeria">Galeria</a></li>
+                <li><a href="#contato" aria-label="Ir para seção Contato">Contato</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Botões de Acessibilidade e Tema -->
     <div id="acessibilidade" aria-label="Acessibilidade">
-        <button id="aumentar-fonte" aria-label="Aumentar fonte">A +</button>
-        <button id="diminuir-fonte" aria-label="Diminuir fonte">A -</button>
-        <button class="toggle-mode" aria-label="Alternar tema">🌙</button>
-        <button id="alto-contraste" aria-label="Ativar alto contraste">🌓</button>
+        <button id="aumentar-fonte" type="button" aria-label="Aumentar fonte" aria-pressed="false" tabindex="0">A +</button>
+        <button id="diminuir-fonte" type="button" aria-label="Diminuir fonte" aria-pressed="false" tabindex="0">A -</button>
+        <button class="toggle-mode" id="toggle-dark" type="button" aria-label="Alternar tema escuro" aria-pressed="false" tabindex="0">🌙</button>
+        <button id="alto-contraste" type="button" aria-label="Ativar alto contraste" aria-pressed="false" tabindex="0">🌓</button>
     </div>
+    <!-- Botão voltar ao topo -->
+    <button id="voltar-topo" aria-label="Voltar ao topo" class="btn btn-secondary" style="position:fixed;bottom:24px;right:24px;z-index:999;display:none;">
+        <i class="fa fa-arrow-up"></i>
+    </button>
 
-    <!-- Banner -->
     <section id="banner" aria-label="Banner principal">
-        <img src="img/banner-rural.jpg" alt="Banner rural" class="banner-img" style="display:none;">
+        <img src="img/banner-rural.jpg" alt="Banner rural" class="banner-img" style="display:none;" loading="lazy">
         <div class="banner-overlay">
-            <h1>Conexão Campo-Cidade</h1>
+            <h1 id="main-content">Conexão Campo-Cidade</h1>
             <p>Unindo o melhor do campo e da cidade para um futuro sustentável.</p>
             <div class="banner-buttons">
                 <a href="#campo" class="btn btn-primary">Campo</a>
@@ -58,16 +87,13 @@
         </div>
     </section>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Seção Início -->
+    <main aria-label="Conteúdo principal">
         <section id="inicio" aria-label="Início" data-aos="fade-up">
             <div class="container text-center">
-                <h1>
-                  <i class="fa-solid fa-seedling"></i>
+                <h2>
                   Bem-vindo à Conexão Campo-Cidade
-                </h1>
-                <!-- Alerta Bootstrap -->
+                  <span><i class="fa-solid fa-seedling"></i></span>
+                </h2>
                 <div class="alert alert-success" role="alert">
                   <i class="fa-solid fa-circle-info"></i>
                   Aproveite para conhecer as novidades sobre o campo e a cidade!
@@ -79,7 +105,6 @@
             </div>
         </section>
 
-        <!-- Seção Campo-Cidade -->
         <section id="campo-cidade" class="my-5 pt-6 secao-campo-cidade" aria-label="Sobre o site" data-aos="fade-right">
             <div class="container bloco-secao">
                 <div class="secao-img-bloco">
@@ -98,7 +123,6 @@
             </div>
         </section>
 
-        <!-- Seção Campo -->
         <section id="campo" class="my-5" aria-label="Campo">
             <div class="container bloco-secao">
                 <div class="secao-img-bloco">
@@ -119,7 +143,6 @@
             </div>
         </section>
 
-        <!-- Seção Cidade -->
         <section id="cidade" class="my-5" aria-label="Cidade">
             <div class="container bloco-secao">
                 <div class="secao-img-bloco">
@@ -140,8 +163,7 @@
             </div>
         </section>
 
-        <!-- Seção Festejando -->
-        <section id="festejando" class="my-5" aria-label="Festejando">
+        <section id="festejando" class="my-5" aria-label="Festejar">
             <div class="container bloco-secao">
                 <div class="secao-img-bloco">
                     <figure>
@@ -154,95 +176,112 @@
                     </figure>
                 </div>
                 <div class="secao-texto-bloco">
-                    <h2 class="text-center">Festejando</h2>
+                    <h2 class="text-center">Festejar</h2>
                     <div class="text-center" style="max-width: 900px; margin: 0 auto;">
                         <p>
-                            <strong>A Conexão Campo-Cidade: Superando Barreirras</strong>
+                            <strong>A Conexão Campo-Cidade: Superando Barreiras</strong>
                         </p>
                         <p>Apesar dos desafios na conexão entre o campo e a cidade, a sociedade tem se mobilizado e promovido projetos que incentivam o desenvolvimento sustentável e valorizam os produtores rurais. Essas ações contribuem para a melhoria da qualidade de vida no meio rural, em parceria com o meio urbano. Diversas iniciativas têm surgido com o objetivo de aproximar esses dois espaços, fortalecendo seus laços e construindo um futuro mais justo e integrado.
-Entre esses processos destacam-se os de agrcultura familiar e feiras agroecologicas, que levam alimento de qualidade direto do campo para o consumidor urbano, promovendo um comercio mais justo e a alimentação saudavel.</p>
+Entre esses processos destacam-se os de agricultura familiar e feiras agroecológicas, que levam alimento de qualidade direto do campo para o consumidor urbano, promovendo um comércio mais justo e a alimentação saudável.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Seção Notícias -->
         <section id="noticias" class="my-5" aria-label="Notícias do Dia a Dia">
             <div class="container">
                 <h2 class="text-center">Notícias do Dia a Dia</h2>
                 <p class="text-center">Fique por dentro das últimas notícias sobre o campo e a cidade. Explore os principais acontecimentos e tendências que conectam esses dois mundos.</p>
                 <div class="row justify-content-center">
                     <div class="col-md-4">
-                        <div class="noticia-card">
+                        <div class="noticia-card" tabindex="0" aria-label="Notícias do Campo" aria-describedby="desc-campo">
                             <h3>Notícias do Campo</h3>
                             <ul>
-                                <li><a href="https://www.noticiasagricolas.com.br/" target="_blank" rel="noopener noreferrer">Notícias Agrícolas</a></li>
-                                <li><a href="https://www.agrolink.com.br/" target="_blank" rel="noopener noreferrer">Agrolink</a></li>
-                                <li><a href="https://www.canalrural.com.br/" target="_blank" rel="noopener noreferrer">Canal Rural</a></li>
+                                <li>
+                                    <a href="https://www.noticiasagricolas.com.br/" target="_blank" rel="noopener noreferrer" class="copy-link" aria-label="Abrir Notícias Agrícolas" data-tooltip="Copiar link">Notícias Agrícolas</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.agrolink.com.br/" target="_blank" rel="noopener noreferrer" class="copy-link" aria-label="Abrir Agrolink" data-tooltip="Copiar link">Agrolink</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.canalrural.com.br/" target="_blank" rel="noopener noreferrer" class="copy-link" aria-label="Abrir Canal Rural" data-tooltip="Copiar link">Canal Rural</a>
+                                </li>
                             </ul>
+                            <span id="desc-campo" class="visually-hidden">Links para notícias do campo. Clique para abrir e copie o link se desejar compartilhar.</span>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="noticia-card">
+                        <div class="noticia-card" tabindex="0" aria-label="Notícias da Cidade" aria-describedby="desc-cidade">
                             <h3>Notícias da Cidade</h3>
                             <ul>
-                                <li><a href="https://g1.globo.com/" target="_blank" rel="noopener noreferrer">G1</a></li>
-                                <li><a href="https://www.uol.com.br/" target="_blank" rel="noopener noreferrer">UOL Notícias</a></li>
-                                <li><a href="https://www.estadao.com.br/" target="_blank" rel="noopener noreferrer">Estadão</a></li>
+                                <li>
+                                    <a href="https://g1.globo.com/" target="_blank" rel="noopener noreferrer" class="copy-link" aria-label="Abrir G1" data-tooltip="Copiar link">G1</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.uol.com.br/" target="_blank" rel="noopener noreferrer" class="copy-link" aria-label="Abrir UOL Notícias" data-tooltip="Copiar link">UOL Notícias</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.estadao.com.br/" target="_blank" rel="noopener noreferrer" class="copy-link" aria-label="Abrir Estadão" data-tooltip="Copiar link">Estadão</a>
+                                </li>
                             </ul>
+                            <span id="desc-cidade" class="visually-hidden">Links para notícias da cidade. Clique para abrir e copie o link se desejar compartilhar.</span>
                         </div>
                   </div>
                 </div>
-                <!-- Vídeo informativo do YouTube -->
                 <div class="video-responsive video-max">
-                    <iframe src="https://www.youtube.com/embed/n8RcQM5MIr8" title="Agro e Arte: conexão entre o campo e a cidade | Canal Sistema CNA/Senar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/n8RcQM5MIr8" title="Agro e Arte: conexão entre o campo e a cidade | Canal Sistema CNA/Senar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
                 </div>
             </div>
         </section>
 
-        <!-- Seção Galeria -->
         <section id="galeria" aria-label="Galeria" data-aos="zoom-in">
             <h2 class="text-center">
               <i class="fa-solid fa-images"></i>
               Galeria
             </h2>
-            <!-- Carousel Bootstrap -->
-            <div id="galeriaCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div id="galeriaCarousel" class="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="3000">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <a href="img/galeria1.jpg" data-lightbox="galeria" data-title="Imagem de um campo verde">
-                    <img src="img/galeria1.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de um campo verde" data-origem="Pixabay – Campo">
-                  </a>
+                  <picture>
+                    <source srcset="img/galeria1.webp" type="image/webp">
+                    <img src="img/galeria1.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de um campo verde, paisagem rural com gramado e árvores" data-origem="Pixabay – Campo" loading="lazy">
+                  </picture>
                 </div>
                 <div class="carousel-item">
-                  <a href="img/galeria2.jpg" data-lightbox="galeria" data-title="Imagem de uma cidade moderna">
-                    <img src="img/galeria2.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de uma cidade moderna" data-origem="Pixabay – Cidade">
-                  </a>
+                  <picture>
+                    <source srcset="img/galeria2.webp" type="image/webp">
+                    <img src="img/galeria2.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de uma cidade moderna, prédios altos e céu azul" data-origem="Pixabay – Cidade" loading="lazy">
+                  </picture>
                 </div>
                 <div class="carousel-item">
-                  <a href="img/galeria3.jpg" data-lightbox="galeria" data-title="Imagem de uma fazenda tradicional">
-                    <img src="img/galeria3.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de uma fazenda tradicional" data-origem="Pixabay – Campo">
-                  </a>
+                  <picture>
+                    <source srcset="img/galeria3.webp" type="image/webp">
+                    <img src="img/galeria3.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de uma fazenda tradicional, com árvores e campo aberto" data-origem="Pixabay – Campo" loading="lazy">
+                  </picture>
                 </div>
                 <div class="carousel-item">
-                  <a href="img/galeria4.jpg" data-lightbox="galeria" data-title="Imagem de um mercado urbano">
-                    <img src="img/galeria4.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de um mercado urbano" data-origem="Pixabay – Cidade">
-                  </a>
+                  <picture>
+                    <source srcset="img/galeria4.webp" type="image/webp">
+                    <img src="img/galeria4.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de um mercado urbano, com barracas e pessoas" data-origem="Pixabay – Cidade" loading="lazy">
+                  </picture>
                 </div>
                 <div class="carousel-item">
-                  <a href="img/galeria6.jpg" data-lightbox="galeria" data-title="Imagem de um evento na cidade">
-                    <img src="img/galeria6.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de um evento na cidade" data-origem="Pixabay – Cidade">
-                  </a>
+                  <picture>
+                    <source srcset="img/galeria6.webp" type="image/webp">
+                    <img src="img/galeria6.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de um evento na cidade, com palco e público" data-origem="Pixabay – Cidade" loading="lazy">
+                  </picture>
                 </div>
                 <div class="carousel-item">
-                  <a href="img/galeria7.jpg" data-lightbox="galeria" data-title="Imagem de um pôr do sol no campo">
-                    <img src="img/galeria7.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de um pôr do sol no campo" data-origem="Pixabay – Campo">
-                  </a>
+                  <picture>
+                    <source srcset="img/galeria7.webp" type="image/webp">
+                    <img src="img/galeria7.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de um pôr do sol no campo, com silhuetas de árvores" data-origem="Pixabay – Campo" loading="lazy">
+                  </picture>
                 </div>
                 <div class="carousel-item">
-                  <a href="img/galeria8.jpg" data-lightbox="galeria" data-title="Imagem de uma rua movimentada na cidade">
-                    <img src="img/galeria8.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de uma rua movimentada na cidade" data-origem="Pixabay – Cidade">
-                  </a>
+                  <picture>
+                    <source srcset="img/galeria8.webp" type="image/webp">
+                    <img src="img/galeria8.jpg" class="d-block w-100 img-origem-hover" alt="Imagem de uma rua movimentada na cidade, com carros e pedestres" data-origem="Pixabay – Cidade" loading="lazy">
+                  </picture>
                 </div>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#galeriaCarousel" data-bs-slide="prev">
@@ -254,48 +293,268 @@ Entre esses processos destacam-se os de agrcultura familiar e feiras agroecologi
                 <span class="visually-hidden">Próximo</span>
               </button>
             </div>
+            <div class="row g-2 justify-content-center">
+              <div class="col-4 col-md-2">
+                <a href="img/galeria1.jpg" data-lightbox="galeria" data-title="Imagem de um campo verde">
+                  <picture>
+                    <source srcset="img/galeria1.webp" type="image/webp">
+                    <img src="img/galeria1.jpg" class="img-fluid rounded img-origem-hover" alt="Imagem de um campo verde, paisagem rural com gramado e árvores" loading="lazy">
+                  </picture>
+                </a>
+              </div>
+              <div class="col-4 col-md-2">
+                <a href="img/galeria2.jpg" data-lightbox="galeria" data-title="Imagem de uma cidade moderna">
+                  <picture>
+                    <source srcset="img/galeria2.webp" type="image/webp">
+                    <img src="img/galeria2.jpg" class="img-fluid rounded img-origem-hover" alt="Imagem de uma cidade moderna, prédios altos e céu azul" loading="lazy">
+                  </picture>
+                </a>
+              </div>
+              <div class="col-4 col-md-2">
+                <a href="img/galeria3.jpg" data-lightbox="galeria" data-title="Imagem de uma fazenda tradicional">
+                  <picture>
+                    <source srcset="img/galeria3.webp" type="image/webp">
+                    <img src="img/galeria3.jpg" class="img-fluid rounded img-origem-hover" alt="Imagem de uma fazenda tradicional, com árvores e campo aberto" loading="lazy">
+                  </picture>
+                </a>
+              </div>
+              <div class="col-4 col-md-2">
+                <a href="img/galeria4.jpg" data-lightbox="galeria" data-title="Imagem de um mercado urbano">
+                  <picture>
+                    <source srcset="img/galeria4.webp" type="image/webp">
+                    <img src="img/galeria4.jpg" class="img-fluid rounded img-origem-hover" alt="Imagem de um mercado urbano, com barracas e pessoas" loading="lazy">
+                  </picture>
+                </a>
+              </div>
+              <div class="col-4 col-md-2">
+                <a href="img/galeria6.jpg" data-lightbox="galeria" data-title="Imagem de um evento na cidade">
+                  <picture>
+                    <source srcset="img/galeria6.webp" type="image/webp">
+                    <img src="img/galeria6.jpg" class="img-fluid rounded img-origem-hover" alt="Imagem de um evento na cidade, com palco e público" loading="lazy">
+                  </picture>
+                </a>
+              </div>
+              <div class="col-4 col-md-2">
+                <a href="img/galeria7.jpg" data-lightbox="galeria" data-title="Imagem de um pôr do sol no campo">
+                  <picture>
+                    <source srcset="img/galeria7.webp" type="image/webp">
+                    <img src="img/galeria7.jpg" class="img-fluid rounded img-origem-hover" alt="Imagem de um pôr do sol no campo, com silhuetas de árvores" loading="lazy">
+                  </picture>
+                </a>
+              </div>
+              <div class="col-4 col-md-2">
+                <a href="img/galeria8.jpg" data-lightbox="galeria" data-title="Imagem de uma rua movimentada na cidade">
+                  <picture>
+                    <source srcset="img/galeria8.webp" type="image/webp">
+                    <img src="img/galeria8.jpg" class="img-fluid rounded img-origem-hover" alt="Imagem de uma rua movimentada na cidade, com carros e pedestres" loading="lazy">
+                  </picture>
+                </a>
+              </div>
+            </div>
         </section>
 
-        <!-- Seção Contato -->
         <section id="contato" aria-label="Contato">
             <div class="container formulario-container">
                 <div class="formulario">
                     <h2>Entre em contato</h2>
-                    <form action="https://formsubmit.co/naomigabrielecostaalves@gmail.com" method="POST" autocomplete="off">
+                    <form id="form-contato" action="https://formsubmit.co/naomigabrielecostaalves@gmail.com" method="POST" autocomplete="on" novalidate>
                         <div class="form-group">
                             <label for="nome">Nome</label>
-                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required autocomplete="name">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                            <input type="email" id="email" name="email" placeholder="Digite seu email" required autocomplete="email">
                         </div>
                         <div class="form-group">
                             <label for="mensagem">Mensagem</label>
-                            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem" required></textarea>
+                            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem" required autocomplete="off"></textarea>
                         </div>
-                        <!-- Proteção contra spam (opcional, oculto) -->
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_next" value="https://agrinho-site-sucesso.vercel.app/obrigado.html">
                         <button type="submit" class="btn btn-primary">Enviar mensagem</button>
                     </form>
+                    <div id="form-erro" class="alert alert-danger mt-2 d-none" role="alert" aria-live="polite"></div>
+                    <div id="form-sucesso" class="alert alert-success mt-2 d-none" role="alert" aria-live="polite"></div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Conexão Campo-Cidade.</p>
-              <p>Desenvolvido por <a href="https://github.com/naomialves/agrinho" target="_blank" rel="noopener noreferrer">Naomi</a></p>
+        <p>Desenvolvido por <a href="https://github.com/naomialves/agrinho" target="_blank" rel="noopener noreferrer">Naomi</a></p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init();
-</script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+      // Menu hamburguer acessível
+      document.getElementById('menu-toggle').addEventListener('click', function() {
+        var menu = document.getElementById('menu-list');
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !expanded);
+        menu.classList.toggle('menu-open');
+      });
+      // Fecha menu ao clicar em um link (mobile)
+      document.querySelectorAll('#menu-list a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          var menu = document.getElementById('menu-list');
+          var btn = document.getElementById('menu-toggle');
+          if (window.innerWidth < 992 && menu.classList.contains('menu-open')) {
+            menu.classList.remove('menu-open');
+            btn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+
+      // Acessibilidade: alternar dark mode e alto contraste, salvar no localStorage
+      function setAriaPressed(btn, state) {
+        btn.setAttribute('aria-pressed', state ? 'true' : 'false');
+      }
+      function setDarkMode(active) {
+        document.body.classList.toggle('dark-mode', active);
+        setAriaPressed(document.getElementById('toggle-dark'), active);
+        localStorage.setItem('dark-mode', active ? '1' : '0');
+      }
+      function setContraste(active) {
+        document.body.classList.toggle('alto-contraste', active);
+        setAriaPressed(document.getElementById('alto-contraste'), active);
+        localStorage.setItem('alto-contraste', active ? '1' : '0');
+      }
+      // Inicializa preferências
+      if (localStorage.getItem('dark-mode') === '1') setDarkMode(true);
+      if (localStorage.getItem('alto-contraste') === '1') setContraste(true);
+
+      document.getElementById('toggle-dark').addEventListener('click', function() {
+        setDarkMode(!document.body.classList.contains('dark-mode'));
+      });
+      document.getElementById('alto-contraste').addEventListener('click', function() {
+        setContraste(!document.body.classList.contains('alto-contraste'));
+      });
+
+      // Botão voltar ao topo
+      var btnTopo = document.getElementById('voltar-topo');
+      window.addEventListener('scroll', function() {
+        btnTopo.style.display = window.scrollY > 200 ? 'block' : 'none';
+      });
+      btnTopo.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Aumentar/diminuir fonte
+      var html = document.documentElement;
+      var fontSize = 100;
+      document.getElementById('aumentar-fonte').addEventListener('click', function() {
+        fontSize = Math.min(fontSize + 10, 150);
+        html.style.fontSize = fontSize + '%';
+        setAriaPressed(this, fontSize > 100);
+      });
+      document.getElementById('diminuir-fonte').addEventListener('click', function() {
+        fontSize = Math.max(fontSize - 10, 80);
+        html.style.fontSize = fontSize + '%';
+        setAriaPressed(this, fontSize < 100);
+      });
+
+      // Validação de formulário + feedback sucesso
+      document.getElementById('form-contato').addEventListener('submit', function(e) {
+        var nome = document.getElementById('nome');
+        var email = document.getElementById('email');
+        var mensagem = document.getElementById('mensagem');
+        var erro = document.getElementById('form-erro');
+        var sucesso = document.getElementById('form-sucesso');
+        erro.classList.add('d-none');
+        erro.innerText = '';
+        sucesso.classList.add('d-none');
+        let valido = true;
+        if (!nome.value.trim()) {
+          valido = false;
+          erro.innerText += 'Preencha o nome corretamente.\n';
+        }
+        if (!email.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+          valido = false;
+          erro.innerText += 'Digite um email válido.\n';
+        }
+        if (!mensagem.value.trim()) {
+          valido = false;
+          erro.innerText += 'Digite sua mensagem.\n';
+        }
+        if (!valido) {
+          erro.classList.remove('d-none');
+          e.preventDefault();
+        } else {
+          sucesso.innerText = 'Mensagem enviada com sucesso! Aguarde o redirecionamento...';
+          sucesso.classList.remove('d-none');
+        }
+      });
+
+      // Acessibilidade: permitir ativar botões com Enter/Espaço
+      document.querySelectorAll('#acessibilidade button, #voltar-topo').forEach(function(btn) {
+        btn.addEventListener('keydown', function(e) {
+          if (e.key === ' ' || e.key === 'Enter') {
+            e.preventDefault();
+            btn.click();
+          }
+        });
+      });
+
+      // Animação suave ao rolar para seções
+      document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          var target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      // Microinteração: animação ao passar mouse nos cards de notícia
+      document.querySelectorAll('.noticia-card').forEach(function(card) {
+        card.addEventListener('mouseenter', function() {
+          card.style.transform = 'scale(1.03)';
+          card.style.boxShadow = '0 8px 24px rgba(124,90,55,0.18)';
+        });
+        card.addEventListener('mouseleave', function() {
+          card.style.transform = '';
+          card.style.boxShadow = '';
+        });
+      });
+
+      // Feedback visual ao copiar link de notícia
+      document.querySelectorAll('.copy-link').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          // Copia o link para a área de transferência
+          if (navigator.clipboard) {
+            e.preventDefault();
+            navigator.clipboard.writeText(link.href).then(function() {
+              // Mostra tooltip temporário
+              let tooltip = document.createElement('span');
+              tooltip.innerText = 'Link copiado!';
+              tooltip.className = 'tooltip-copiado';
+              tooltip.style.position = 'absolute';
+              tooltip.style.background = '#bfa074';
+              tooltip.style.color = '#3e2c1a';
+              tooltip.style.padding = '4px 12px';
+              tooltip.style.borderRadius = '8px';
+              tooltip.style.fontWeight = 'bold';
+              tooltip.style.fontSize = '1rem';
+              tooltip.style.zIndex = 2000;
+              tooltip.style.top = (link.getBoundingClientRect().top + window.scrollY - 36) + 'px';
+              tooltip.style.left = (link.getBoundingClientRect().left + window.scrollX) + 'px';
+              document.body.appendChild(tooltip);
+              setTimeout(function() {
+                tooltip.remove();
+                window.open(link.href, '_blank', 'noopener');
+              }, 900);
+            });
+          }
+        });
+      });
+    </script>
 </body>
 </html>
