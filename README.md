@@ -119,7 +119,7 @@ Confira o arquivo [LICENSE](LICENSE) para mais detalhes.
 ## 👤 Autor
 
 - Naomi Alves
-- 📧 E-mail: seuemail@email.com
+- 📧 E-mail: naomigabrielecostaalves@gmail.com
 - 🌐 GitHub: [@naomialves](https://github.com/naomialves)
 
 ---
