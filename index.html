@@ -526,23 +526,6 @@ Entre esses processos destacam-se os de agricultura familiar e feiras agroecoló
         });
       });
 
-      // Sincroniza miniaturas com carrossel e abre lightbox na imagem correspondente
-      document.querySelectorAll('#galeria .row a[data-slide]').forEach(function(thumb, idx) {
-        thumb.addEventListener('click', function(e) {
-          e.preventDefault();
-          var slideIdx = parseInt(this.getAttribute('data-slide'));
-          var carousel = bootstrap.Carousel.getOrCreateInstance(document.getElementById('galeriaCarousel'));
-          carousel.to(slideIdx);
-          // Aguarda o slide mudar, então abre o lightbox
-          setTimeout(() => {
-            // Seleciona o link da imagem do slide atual no carrossel
-            var slide = document.querySelectorAll('#galeriaCarousel .carousel-item')[slideIdx];
-            var link = slide.querySelector('a[data-lightbox]');
-            if (link) link.click();
-          }, 400);
-        });
-      });
-
       // Permite abrir imagem do carrossel em tela cheia/lightbox ao clicar
       document.querySelectorAll('#galeriaCarousel .carousel-item a[data-lightbox]').forEach(function(link) {
         link.addEventListener('click', function(e) {
