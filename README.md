@@ -1,70 +1,80 @@
+
+---
+
 # 🌾 Agrinho – Conexão Campo‑Cidade
 
-> Tema (Agrinho): **Festejando a conexão campo‑cidade** – promovendo o diálogo entre sustentabilidade, cultura e educação no meio rural e urbano.
+![GitHub repo size](https://img.shields.io/github/repo-size/naomialves/agrinho)
+![License](https://img.shields.io/github/license/naomialves/agrinho)
+
+> **Tema:** Festejando a conexão campo‑cidade – promovendo o diálogo entre sustentabilidade, cultura e educação no meio rural e urbano.
 
 ---
 
 ## 📌 Índice
 
-- [📖 Descrição](#📖-descrição)
-- [✅ Funcionalidades](#✅-funcionalidades)
-- [🛠️ Tecnologias](#🛠️-tecnologias)
-- [🚀 Demonstração (Deploy)](#🚀-demonstração-deploy)
-- [⚙️ Como rodar localmente](#⚙️-como-rodar-localmente)
-- [📁 Estrutura do projeto](#📁-estrutura-do-projeto)
-- [🖼️ Recursos utilizados](#🖼️-recursos-utilizados)
-- [🤝 Contribuições](#🤝-contribuições)
-- [📄 Licença](#📄-licença)
-- [👤 Autor](#👤-autor)
+- [Descrição](#descrição)
+- [Funcionalidades](#funcionalidades)
+- [Preview](#preview)
+- [Tecnologias](#tecnologias)
+- [Demonstração](#demonstração)
+- [Como rodar localmente](#como-rodar-localmente)
+- [Estrutura do projeto](#estrutura-do-projeto)
+- [Recursos utilizados](#recursos-utilizados)
+- [Contribuições](#contribuições)
+- [Licença](#licença)
+- [Autor](#autor)
 
 ---
 
 ## 📖 Descrição
 
-Este projeto foi desenvolvido como parte do concurso **Agrinho 2025**, com o objetivo de destacar a conexão vital entre o campo e a cidade. A proposta aborda temas como agricultura, sustentabilidade, cultura rural e urbana, e educação.
-
-O site oferece uma experiência interativa e informativa, celebrando o papel de cada ambiente na construção de uma sociedade mais consciente e integrada.
+Site desenvolvido para o concurso **Agrinho 2025** destacando a conexão vital entre o campo e a cidade. O objetivo é abordar temas como agricultura, sustentabilidade, educação e cultura, promovendo a integração e conscientização da sociedade.
 
 ---
 
 ## ✅ Funcionalidades
 
-- Layout responsivo (adaptado para celular, tablet e desktop)
-- Navegação fluida com rolagem suave
-- Tema dinâmico claro/escuro
+- Layout responsivo (celular, tablet e desktop)
+- Tema claro/escuro dinâmico
 - Carrossel de imagens e textos temáticos
-- Botão "voltar ao topo"
-- Lightbox nas imagens
-- Contador regressivo com JavaScript
-- Rodapé com informações de contato e fontes
+- Navegação suave e intuitiva
+- Lightbox para imagens
+- Contador regressivo em JavaScript
+- Rodapé com contatos e fontes
+
+---
+
+## 🖼️ Preview
+
+![Screenshot do site](assets/img/background.jpg)
+
+[Acesse o site publicado](https://agrinho-nine-beige.vercel.app/)
 
 ---
 
 ## 🛠️ Tecnologias
 
-- **HTML5**
-- **CSS3**
-- **JavaScript**
-- **Vercel** (hospedagem)
-- **Fontes e ícones**: Google Fonts e Boxicons
-
----
-
-## 🚀 Demonstração (Deploy)
-
-🔗 [Acesse o site publicado](https://agrinho-nine-beige.vercel.app/)
+- HTML5
+- CSS3
+- JavaScript
+- [Vercel](https://vercel.com/) (hospedagem)
+- Google Fonts e Boxicons (ícones e fontes)
 
 ---
 
 ## ⚙️ Como rodar localmente
 
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/naomialves/agrinho.git
-   
+```bash
+git clone https://github.com/naomialves/agrinho.git
+cd agrinho
+# Abra o arquivo index.html em seu navegador
+```
+
 ---
 
-##📁 Estrutura do projeto
+## 📁 Estrutura do projeto
+
+```
 agrinho/
 ├── index.html
 ├── css/
@@ -77,41 +87,41 @@ agrinho/
 │   └── video/
 │       └── senar-video.mp4
 └── README.md
-
-##🖼️ Recursos utilizados
-- Imagem de fundo: retirada do site Pixabay – imagem livre para uso comercial, sem necessidade de atribuição (licença: Pixabay License)
-📸 Acesse a imagem original
-
-- Vídeo incorporado: do canal oficial do SENAR – utilizado com fins educacionais
-🎥 Ver vídeo no YouTube
-(Todos os direitos do vídeo pertencem ao SENAR.)
+```
 
 ---
 
-##🤝 Contribuições
-- Contribuições são sempre bem-vindas!
+## 🖼️ Recursos utilizados
 
-- Faça um fork
-
-- Crie uma branch: git checkout -b minha-melhoria
-
-- Faça o commit: git commit -m "Melhoria: nova funcionalidade"
-
-- Envie a branch: git push origin minha-melhoria
-
-- Abra um Pull Request
-
-  
-  ---
-
-  
-  📄 Licença
-> Este projeto está sob a licença MIT – sinta-se livre para usar, modificar e distribuir.
-Confira o arquivo LICENSE para mais detalhes.
+- **Imagem de fundo:** [Pixabay](https://pixabay.com/) – imagem livre para uso comercial ([Pixabay License](https://pixabay.com/service/license/))
+- **Vídeo:** Canal oficial do SENAR no YouTube – usado para fins educacionais
 
 ---
- 
- ##👤 Autor
+
+## 🤝 Contribuições
+
+Contribuições são bem-vindas!  
+1. Faça um fork
+2. Crie uma branch: `git checkout -b minha-melhoria`
+3. Faça o commit: `git commit -m "Melhoria: nova funcionalidade"`
+4. Envie a branch: `git push origin minha-melhoria`
+5. Abra um Pull Request
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT – sinta-se livre para usar, modificar e distribuir.  
+Confira o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+## 👤 Autor
+
 - Naomi Alves
 - 📧 E-mail: seuemail@email.com
-- 🌐 GitHub: @naomialves
+- 🌐 GitHub: [@naomialves](https://github.com/naomialves)
+
+---
+
+Se quiser adaptar ou acrescentar algo, é só pedir!
