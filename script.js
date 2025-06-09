@@ -211,6 +211,8 @@ if (menuToggle && menuList) {
     menuToggle.addEventListener('click', function () {
         const aberto = menuList.classList.toggle('menu-open');
         menuToggle.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+        // Impede scroll do fundo quando menu está aberto
+        document.body.style.overflow = aberto ? 'hidden' : '';
     });
 
     // Fecha o menu ao clicar em um link
@@ -219,7 +221,22 @@ if (menuToggle && menuList) {
             if (window.innerWidth <= 900) {
                 menuList.classList.remove('menu-open');
                 menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
             }
         });
+    });
+
+    // Fecha o menu ao clicar fora dele
+    document.addEventListener('click', function (e) {
+        if (
+            menuList.classList.contains('menu-open') &&
+            !menuList.contains(e.target) &&
+            e.target !== menuToggle &&
+            !menuToggle.contains(e.target)
+        ) {
+            menuList.classList.remove('menu-open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
     });
 }
