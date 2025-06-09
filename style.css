@@ -250,6 +250,7 @@ section {
     transition: box-shadow 0.3s, border-color 0.3s, background 0.3s, filter 0.3s;
     position: relative;
     z-index: 1;
+    overflow-x: visible; /* Altere para visible */
 }
 
 body.dark-mode section {
@@ -1412,13 +1413,11 @@ body.alto-contraste .form-obrigada {
     margin-right: 0 !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
-    overflow-x: hidden;
 }
 
 /* Garante que section não ultrapasse a tela */
 section {
-    max-width: 100vw;
-    overflow-x: hidden;
+    overflow-x: visible; /* Altere para visible */
 }
 
 /* Ajuste para imagens nunca ultrapassarem a tela */
@@ -1430,4 +1429,39 @@ img, iframe {
     margin-left: auto;
     margin-right: auto;
     border-radius: 8px;
+}
+
+/* Garante que as seções estejam visíveis e acima do ::before do body */
+section {
+    position: relative !important;
+    z-index: 10 !important;
+    display: block !important;
+    overflow: visible !important;
+}
+
+/* Corrige possíveis conflitos de flexbox em .container e .bloco-secao */
+.container, .bloco-secao {
+    display: block !important;
+    /* Remove flex se não for necessário */
+}
+
+/* Corrige possíveis problemas de display em .carousel */
+.carousel {
+    display: flex !important;
+    overflow-x: auto !important;
+}
+
+/* Garante que .carousel img esteja visível */
+.carousel img {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Remove qualquer display:none acidental */
+#campo-cidade, #galeria {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 10 !important;
 }
