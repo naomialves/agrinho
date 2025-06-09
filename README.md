@@ -46,8 +46,7 @@ Site desenvolvido para o concurso **Agrinho 2025** destacando a conexão vital e
 
 ## 🖼️ Preview
 
-![Screenshot do site](img/background.jpg)
-
+![Screenshot do site]![Background](https://github.com/user-attachments/assets/4eff11c5-d5dd-4e7a-9e2b-926e227d338f)
 [Acesse o site publicado](https://agrinho-nine-beige.vercel.app/)
 
 ---
@@ -100,7 +99,8 @@ agrinho/
 
 ## 🤝 Contribuições
 
-Contribuições são bem-vindas!  
+Contribuições são bem-vindas! 
+
 1. Faça um fork
 2. Crie uma branch: `git checkout -b minha-melhoria`
 3. Faça o commit: `git commit -m "Melhoria: nova funcionalidade"`
