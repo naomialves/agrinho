@@ -1150,7 +1150,7 @@ body.alto-contraste .img-origem-hover::after {
         top: 100%;
         right: 0;
         left: 0;
-        z-index: 1000;
+        z-index: 2001; /* Aumentado para garantir sobreposição */
         box-shadow: 0 2px 12px rgba(124,90,55,0.13);
     }
     header nav ul.nav.menu-open {
