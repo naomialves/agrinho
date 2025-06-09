@@ -76,12 +76,12 @@ agrinho/
 │   ├── img/
 │   └── fonts/
 └── README.md
-##📷 Recursos Utilizados
+📷 Recursos Utilizados
 Imagem: retirada do site Pixabay, livre para uso comercial e sem necessidade de atribuição.
 
 Vídeo: incorporado a partir do canal oficial do SENAR, utilizado apenas para fins educacionais e culturais.
 
-##🤝 Contribuições
+🤝 Contribuições
 Contribuições são bem-vindas! Para colaborar:
 
 Faça um fork
@@ -94,15 +94,15 @@ Envie para seu fork: git push origin minha-contribuição
 
 Abra um Pull Request
 
-##📄 Licença
+📄 Licença
 Este projeto está licenciado sob a MIT License. Veja o arquivo LICENSE para mais informações.
 
-##👤 Autor
+👤 Autor
 Naomi Alves
 📧 E-mail: seu.email@provedor.com
 🔗 GitHub: @naomialves
 
-##🌟 Melhorias futuras
+🌟 Melhorias futuras
 Inserir screenshots do site
 
 Adicionar badges ao topo (deploy, licença, etc.)
