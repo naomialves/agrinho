@@ -1134,12 +1134,14 @@ body.alto-contraste .img-origem-hover::after {
     display: block;
     transition: 0.3s;
 }
+
+/* MOBILE: menu escondido por padrão, aparece só com .menu-open */
 @media (max-width: 900px) {
     .menu-hamburguer {
-        display: flex;
+        display: flex !important;
     }
     header nav ul.nav {
-        display: none;
+        display: none !important;
         flex-direction: column;
         gap: 0;
         padding: 0;
@@ -1150,11 +1152,11 @@ body.alto-contraste .img-origem-hover::after {
         top: 100%;
         right: 0;
         left: 0;
-        z-index: 2001; /* Aumentado para garantir sobreposição */
+        z-index: 2001;
         box-shadow: 0 2px 12px rgba(124,90,55,0.13);
     }
     header nav ul.nav.menu-open {
-        display: flex;
+        display: flex !important;
     }
     header nav ul.nav li {
         width: 100%;
@@ -1175,34 +1177,27 @@ body.alto-contraste .img-origem-hover::after {
     }
 }
 
-/* ===== VÍDEO RESPONSIVO MAX ===== */
-.video-max {
-    max-width: 900px;
-    margin: 0 auto 24px auto;
-}
-.video-max iframe {
-    width: 100% !important;
-    height: 56vw !important;
-    max-height: 480px;
-    min-height: 200px;
-    display: block;
-    border-radius: 16px;
-    background: #000;
-}
-@media (max-width: 900px) {
-    .video-max iframe {
-        height: 48vw !important;
-        max-height: 320px;
+/* DESKTOP: menu sempre visível, menu-hamburguer some */
+@media (min-width: 901px) {
+    header nav ul.nav {
+        display: flex !important;
+        position: static !important;
+        background: none !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        gap: 28px !important;
+        flex-direction: row !important;
+        padding: 0 32px !important;
+        margin: 0 !important;
     }
-}
-@media (max-width: 600px) {
-    .video-max iframe {
-        height: 38vw !important;
-        max-height: 180px;
+    .menu-hamburguer {
+        display: none !important;
     }
 }
 
-/* ===== GARANTE IMAGENS CORRETAS ===== */
+/* =========================
+   RESPONSIVIDADE MELHORADA PARA IMAGENS
+   ========================= */
 .secao-img-bloco img,
 .carousel img {
     width: 100%;
@@ -1210,12 +1205,6 @@ body.alto-contraste .img-origem-hover::after {
     max-width: 280px;
     min-width: 0;
     object-fit: cover;
-    display: block;
-}
-.carousel img {
-    max-width: 320px;
-    min-width: 90px;
-    height: auto;
 }
 @media (max-width: 900px) {
     .secao-img-bloco img,
@@ -1233,235 +1222,1144 @@ body.alto-contraste .img-origem-hover::after {
     }
 }
 
-/* ===== FORMULÁRIO SOFISTICADO ===== */
-.formulario-container {
+/* =========================
+   LIGHTBOX DE IMAGEM - FONTE VISÍVEL E RESPONSIVA
+   ========================= */
+.img-lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 20, 10, 0.92);
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    padding: 0;
+    z-index: 9999;
+    cursor: zoom-out;
+    animation: fadeIn 0.2s;
+    padding: 24px 8px;
+}
+.img-lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 70vh;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    background: #fff;
+    padding: 8px;
     margin: 0 auto;
-    max-width: 700px;
+    display: block;
 }
-.formulario {
-    background: rgba(255, 250, 240, 0.98);
-    border: 2px solid var(--accent-color);
-    border-radius: 18px;
-    box-shadow: 0 6px 24px rgba(124,90,55,0.13);
-    padding: 40px 32px 32px 32px;
-    margin: 32px auto 0 auto;
-    width: 100%;
-    max-width: 480px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: box-shadow 0.3s, border-color 0.3s, background 0.3s;
-}
-.formulario h2 {
-    margin-bottom: 24px;
-    color: var(--primary-color);
-    font-size: 2rem;
-    letter-spacing: 1px;
+.img-lightbox-caption {
+    color: #ffe7c2;
     text-align: center;
-}
-.formulario form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-.form-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
+    margin-top: 18px;
+    font-size: 1.15rem;
+    text-shadow: 0 2px 8px #000;
+    background: rgba(44,36,24,0.92);
+    border-radius: 8px;
+    padding: 8px 18px;
+    max-width: 90vw;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border: 1.5px solid #a67c52;
     margin-bottom: 8px;
 }
-.form-group label {
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 6px;
-    letter-spacing: 0.5px;
-}
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px 14px;
-    border-radius: 8px;
-    border: 2px solid var(--secondary-color);
-    background: #fff8ef;
-    color: #3e2c1a;
-    font-size: 1rem;
-    font-family: 'Merriweather', 'Georgia', serif;
-    transition: border-color 0.3s, box-shadow 0.3s;
-    margin-bottom: 0;
-    resize: vertical;
-}
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 8px var(--primary-color);
-    outline: none;
-}
-.formulario .btn {
-    width: 100%;
-    margin-top: 12px;
-    padding: 14px 0;
-    font-size: 1.1rem;
-    border-radius: 30px;
-    font-weight: bold;
-    background: linear-gradient(90deg, #bfa074 60%, #7c5a37 100%);
-    color: #3e2c1a;
-    border: none;
-    box-shadow: 0 4px 12px rgba(60,40,20,0.13);
-    transition: background 0.3s, color 0.3s, transform 0.2s;
-    cursor: pointer;
-}
-.formulario .btn:hover,
-.formulario .btn:focus {
-    background: linear-gradient(90deg, #7c5a37 60%, #bfa074 100%);
-    color: #fff;
-    outline: 2px solid var(--focus-outline);
-    transform: scale(1.04);
-}
-
-/* Mensagem de obrigada após envio */
-.form-obrigada {
-    display: block;
-    margin: 18px 0 0 0;
-    font-weight: bold;
-    color: var(--primary-color);
-    font-size: 1.2em;
-    text-align: center;
-    letter-spacing: 1px;
-    background: #fffbe9;
-    border-radius: 8px;
-    padding: 8px 0;
-    box-shadow: 0 2px 8px rgba(124,90,55,0.08);
-}
-
-/* Dark mode e alto contraste para formulário */
-body.dark-mode .formulario {
-    background: rgba(44, 36, 24, 0.98);
-    border-color: var(--secondary-color);
-}
-body.dark-mode .form-group label {
-    color: var(--secondary-color);
-}
-body.dark-mode .form-group input,
-body.dark-mode .form-group textarea {
-    background: #2a2318;
-    color: var(--text-dark);
-    border-color: var(--secondary-color);
-}
-body.dark-mode .formulario .btn {
-    background: linear-gradient(90deg, #7c5a37 60%, #bfa074 100%);
-    color: #fff;
-}
-body.alto-contraste .formulario {
-    background: #000 !important;
-    border-color: #ff0 !important;
-}
-body.alto-contraste .form-group label {
-    color: #ff0 !important;
-}
-body.alto-contraste .form-group input,
-body.alto-contraste .form-group textarea {
-    background: #000 !important;
-    color: #ff0 !important;
-    border-color: #ff0 !important;
-}
-body.alto-contraste .formulario .btn {
-    background: #000 !important;
-    color: #ff0 !important;
-    border: 2px solid #ff0 !important;
-}
-body.alto-contraste .form-obrigada {
-    background: #000 !important;
-    color: #ff0 !important;
-    border: 2px solid #ff0 !important;
-}
-
-/* Responsividade do formulário */
-@media (max-width: 900px) {
-    .formulario {
-        padding: 24px 8px 18px 8px;
+@media (max-width: 600px) {
+    .img-lightbox-overlay img {
         max-width: 98vw;
+        max-height: 50vh;
+        border-radius: 8px;
+        padding: 4px;
+    }
+    .img-lightbox-caption {
+        font-size: 1rem;
+        padding: 6px 8px;
+        border-radius: 6px;
+    }
+}
+
+/* ===== MENU HAMBURGUER ===== */
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    margin-left: 12px;
+}
+.hamburguer-bar {
+    width: 28px;
+    height: 4px;
+    background: #ffe7c2;
+    margin: 3px 0;
+    border-radius: 2px;
+    display: block;
+    transition: 0.3s;
+}
+
+/* MOBILE: menu escondido por padrão, aparece só com .menu-open */
+@media (max-width: 900px) {
+    .menu-hamburguer {
+        display: flex !important;
+    }
+    header nav ul.nav {
+        display: none !important;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        background: rgba(124,90,55,0.98);
+        border-radius: 0 0 12px 12px;
+        margin: 0;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: 2001;
+        box-shadow: 0 2px 12px rgba(124,90,55,0.13);
+    }
+    header nav ul.nav.menu-open {
+        display: flex !important;
+    }
+    header nav ul.nav li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #bfa074;
+        margin: 0;
+    }
+    header nav ul.nav li:last-child {
+        border-bottom: none;
+    }
+    header nav ul.nav a {
+        display: block;
+        padding: 16px 0;
+        font-size: 1.2rem;
+    }
+    header nav {
+        position: relative;
+    }
+}
+
+/* DESKTOP: menu sempre visível, menu-hamburguer some */
+@media (min-width: 901px) {
+    header nav ul.nav {
+        display: flex !important;
+        position: static !important;
+        background: none !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        gap: 28px !important;
+        flex-direction: row !important;
+        padding: 0 32px !important;
+        margin: 0 !important;
+    }
+    .menu-hamburguer {
+        display: none !important;
+    }
+}
+
+/* =========================
+   RESPONSIVIDADE MELHORADA PARA IMAGENS
+   ========================= */
+.secao-img-bloco img,
+.carousel img {
+    width: 100%;
+    height: auto;
+    max-width: 280px;
+    min-width: 0;
+    object-fit: cover;
+}
+@media (max-width: 900px) {
+    .secao-img-bloco img,
+    .carousel img {
+        max-width: 98vw;
+        min-width: 0;
     }
 }
 @media (max-width: 600px) {
-    .formulario {
-        padding: 12px 2px 8px 2px;
+    .secao-img-bloco img,
+    .carousel img {
+        max-width: 95vw;
+        min-width: 0;
         border-radius: 8px;
-        max-width: 99vw;
     }
-    .formulario h2 {
+}
+
+/* =========================
+   LIGHTBOX DE IMAGEM - FONTE VISÍVEL E RESPONSIVA
+   ========================= */
+.img-lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 20, 10, 0.92);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    cursor: zoom-out;
+    animation: fadeIn 0.2s;
+    padding: 24px 8px;
+}
+.img-lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 70vh;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    background: #fff;
+    padding: 8px;
+    margin: 0 auto;
+    display: block;
+}
+.img-lightbox-caption {
+    color: #ffe7c2;
+    text-align: center;
+    margin-top: 18px;
+    font-size: 1.15rem;
+    text-shadow: 0 2px 8px #000;
+    background: rgba(44,36,24,0.92);
+    border-radius: 8px;
+    padding: 8px 18px;
+    max-width: 90vw;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border: 1.5px solid #a67c52;
+    margin-bottom: 8px;
+}
+@media (max-width: 600px) {
+    .img-lightbox-overlay img {
+        max-width: 98vw;
+        max-height: 50vh;
+        border-radius: 8px;
+        padding: 4px;
+    }
+    .img-lightbox-caption {
+        font-size: 1rem;
+        padding: 6px 8px;
+        border-radius: 6px;
+    }
+}
+
+/* ===== MENU HAMBURGUER ===== */
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    margin-left: 12px;
+}
+.hamburguer-bar {
+    width: 28px;
+    height: 4px;
+    background: #ffe7c2;
+    margin: 3px 0;
+    border-radius: 2px;
+    display: block;
+    transition: 0.3s;
+}
+
+/* MOBILE: menu escondido por padrão, aparece só com .menu-open */
+@media (max-width: 900px) {
+    .menu-hamburguer {
+        display: flex !important;
+    }
+    header nav ul.nav {
+        display: none !important;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        background: rgba(124,90,55,0.98);
+        border-radius: 0 0 12px 12px;
+        margin: 0;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: 2001;
+        box-shadow: 0 2px 12px rgba(124,90,55,0.13);
+    }
+    header nav ul.nav.menu-open {
+        display: flex !important;
+    }
+    header nav ul.nav li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #bfa074;
+        margin: 0;
+    }
+    header nav ul.nav li:last-child {
+        border-bottom: none;
+    }
+    header nav ul.nav a {
+        display: block;
+        padding: 16px 0;
         font-size: 1.2rem;
     }
-    .formulario .btn {
-        font-size: 1rem;
-        border-radius: 18px;
-        padding: 10px 0;
+    header nav {
+        position: relative;
     }
 }
 
-/* Ajuste para containers e rows para evitar rolagem lateral */
-.container, .row {
-    width: 100%;
-    max-width: 100vw;
-    box-sizing: border-box;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+/* DESKTOP: menu sempre visível, menu-hamburguer some */
+@media (min-width: 901px) {
+    header nav ul.nav {
+        display: flex !important;
+        position: static !important;
+        background: none !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        gap: 28px !important;
+        flex-direction: row !important;
+        padding: 0 32px !important;
+        margin: 0 !important;
+    }
+    .menu-hamburguer {
+        display: none !important;
+    }
 }
 
-/* Garante que section não ultrapasse a tela */
-section {
-    overflow-x: visible; /* Altere para visible */
-}
-
-/* Ajuste para imagens nunca ultrapassarem a tela */
-img, iframe {
-    max-width: 100vw;
+/* =========================
+   RESPONSIVIDADE MELHORADA PARA IMAGENS
+   ========================= */
+.secao-img-bloco img,
+.carousel img {
     width: 100%;
     height: auto;
+    max-width: 280px;
+    min-width: 0;
+    object-fit: cover;
+}
+@media (max-width: 900px) {
+    .secao-img-bloco img,
+    .carousel img {
+        max-width: 98vw;
+        min-width: 0;
+    }
+}
+@media (max-width: 600px) {
+    .secao-img-bloco img,
+    .carousel img {
+        max-width: 95vw;
+        min-width: 0;
+        border-radius: 8px;
+    }
+}
+
+/* =========================
+   LIGHTBOX DE IMAGEM - FONTE VISÍVEL E RESPONSIVA
+   ========================= */
+.img-lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 20, 10, 0.92);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    cursor: zoom-out;
+    animation: fadeIn 0.2s;
+    padding: 24px 8px;
+}
+.img-lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 70vh;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    background: #fff;
+    padding: 8px;
+    margin: 0 auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+}
+.img-lightbox-caption {
+    color: #ffe7c2;
+    text-align: center;
+    margin-top: 18px;
+    font-size: 1.15rem;
+    text-shadow: 0 2px 8px #000;
+    background: rgba(44,36,24,0.92);
     border-radius: 8px;
+    padding: 8px 18px;
+    max-width: 90vw;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border: 1.5px solid #a67c52;
+    margin-bottom: 8px;
+}
+@media (max-width: 600px) {
+    .img-lightbox-overlay img {
+        max-width: 98vw;
+        max-height: 50vh;
+        border-radius: 8px;
+        padding: 4px;
+    }
+    .img-lightbox-caption {
+        font-size: 1rem;
+        padding: 6px 8px;
+        border-radius: 6px;
+    }
 }
 
-/* Garante que as seções estejam visíveis e acima do ::before do body */
-section {
-    position: relative !important;
-    z-index: 10 !important;
-    display: block !important;
-    overflow: visible !important;
+/* ===== MENU HAMBURGUER ===== */
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    margin-left: 12px;
+}
+.hamburguer-bar {
+    width: 28px;
+    height: 4px;
+    background: #ffe7c2;
+    margin: 3px 0;
+    border-radius: 2px;
+    display: block;
+    transition: 0.3s;
 }
 
-/* Corrige possíveis conflitos de flexbox em .container e .bloco-secao */
-.container, .bloco-secao {
-    /* display: block !important; */
-    /* Remove esta linha para permitir o flex padrão */
+/* MOBILE: menu escondido por padrão, aparece só com .menu-open */
+@media (max-width: 900px) {
+    .menu-hamburguer {
+        display: flex !important;
+    }
+    header nav ul.nav {
+        display: none !important;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        background: rgba(124,90,55,0.98);
+        border-radius: 0 0 12px 12px;
+        margin: 0;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: 2001;
+        box-shadow: 0 2px 12px rgba(124,90,55,0.13);
+    }
+    header nav ul.nav.menu-open {
+        display: flex !important;
+    }
+    header nav ul.nav li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #bfa074;
+        margin: 0;
+    }
+    header nav ul.nav li:last-child {
+        border-bottom: none;
+    }
+    header nav ul.nav a {
+        display: block;
+        padding: 16px 0;
+        font-size: 1.2rem;
+    }
+    header nav {
+        position: relative;
+    }
 }
 
-/* Corrige possíveis problemas de display em .carousel */
-.carousel {
-    display: flex !important;
-    overflow-x: auto !important;
+/* DESKTOP: menu sempre visível, menu-hamburguer some */
+@media (min-width: 901px) {
+    header nav ul.nav {
+        display: flex !important;
+        position: static !important;
+        background: none !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        gap: 28px !important;
+        flex-direction: row !important;
+        padding: 0 32px !important;
+        margin: 0 !important;
+    }
+    .menu-hamburguer {
+        display: none !important;
+    }
 }
 
-/* Garante que .carousel img esteja visível */
+/* =========================
+   RESPONSIVIDADE MELHORADA PARA IMAGENS
+   ========================= */
+.secao-img-bloco img,
 .carousel img {
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
+    width: 100%;
+    height: auto;
+    max-width: 280px;
+    min-width: 0;
+    object-fit: cover;
+}
+@media (max-width: 900px) {
+    .secao-img-bloco img,
+    .carousel img {
+        max-width: 98vw;
+        min-width: 0;
+    }
+}
+@media (max-width: 600px) {
+    .secao-img-bloco img,
+    .carousel img {
+        max-width: 95vw;
+        min-width: 0;
+        border-radius: 8px;
+    }
 }
 
-/* Remove qualquer display:none acidental */
-#campo-cidade, #galeria {
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    z-index: 10 !important;
+/* =========================
+   LIGHTBOX DE IMAGEM - FONTE VISÍVEL E RESPONSIVA
+   ========================= */
+.img-lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 20, 10, 0.92);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    cursor: zoom-out;
+    animation: fadeIn 0.2s;
+    padding: 24px 8px;
+}
+.img-lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 70vh;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    background: #fff;
+    padding: 8px;
+    margin: 0 auto;
+    display: block;
+}
+.img-lightbox-caption {
+    color: #ffe7c2;
+    text-align: center;
+    margin-top: 18px;
+    font-size: 1.15rem;
+    text-shadow: 0 2px 8px #000;
+    background: rgba(44,36,24,0.92);
+    border-radius: 8px;
+    padding: 8px 18px;
+    max-width: 90vw;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border: 1.5px solid #a67c52;
+    margin-bottom: 8px;
+}
+@media (max-width: 600px) {
+    .img-lightbox-overlay img {
+        max-width: 98vw;
+        max-height: 50vh;
+        border-radius: 8px;
+        padding: 4px;
+    }
+    .img-lightbox-caption {
+        font-size: 1rem;
+        padding: 6px 8px;
+        border-radius: 6px;
+    }
+}
+
+/* ===== MENU HAMBURGUER ===== */
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    margin-left: 12px;
+}
+.hamburguer-bar {
+    width: 28px;
+    height: 4px;
+    background: #ffe7c2;
+    margin: 3px 0;
+    border-radius: 2px;
+    display: block;
+    transition: 0.3s;
+}
+
+/* MOBILE: menu escondido por padrão, aparece só com .menu-open */
+@media (max-width: 900px) {
+    .menu-hamburguer {
+        display: flex !important;
+    }
+    header nav ul.nav {
+        display: none !important;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        background: rgba(124,90,55,0.98);
+        border-radius: 0 0 12px 12px;
+        margin: 0;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: 2001;
+        box-shadow: 0 2px 12px rgba(124,90,55,0.13);
+    }
+    header nav ul.nav.menu-open {
+        display: flex !important;
+    }
+    header nav ul.nav li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #bfa074;
+        margin: 0;
+    }
+    header nav ul.nav li:last-child {
+        border-bottom: none;
+    }
+    header nav ul.nav a {
+        display: block;
+        padding: 16px 0;
+        font-size: 1.2rem;
+    }
+    header nav {
+        position: relative;
+    }
+}
+
+/* DESKTOP: menu sempre visível, menu-hamburguer some */
+@media (min-width: 901px) {
+    header nav ul.nav {
+        display: flex !important;
+        position: static !important;
+        background: none !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        gap: 28px !important;
+        flex-direction: row !important;
+        padding: 0 32px !important;
+        margin: 0 !important;
+    }
+    .menu-hamburguer {
+        display: none !important;
+    }
+}
+
+/* =========================
+   RESPONSIVIDADE MELHORADA PARA IMAGENS
+   ========================= */
+.secao-img-bloco img,
+.carousel img {
+    width: 100%;
+    height: auto;
+    max-width: 280px;
+    min-width: 0;
+    object-fit: cover;
+}
+@media (max-width: 900px) {
+    .secao-img-bloco img,
+    .carousel img {
+        max-width: 98vw;
+        min-width: 0;
+    }
+}
+@media (max-width: 600px) {
+    .secao-img-bloco img,
+    .carousel img {
+        max-width: 95vw;
+        min-width: 0;
+        border-radius: 8px;
+    }
+}
+
+/* =========================
+   LIGHTBOX DE IMAGEM - FONTE VISÍVEL E RESPONSIVA
+   ========================= */
+.img-lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 20, 10, 0.92);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    cursor: zoom-out;
+    animation: fadeIn 0.2s;
+    padding: 24px 8px;
+}
+.img-lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 70vh;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    background: #fff;
+    padding: 8px;
+    margin: 0 auto;
+    display: block;
+}
+.img-lightbox-caption {
+    color: #ffe7c2;
+    text-align: center;
+    margin-top: 18px;
+    font-size: 1.15rem;
+    text-shadow: 0 2px 8px #000;
+    background: rgba(44,36,24,0.92);
+    border-radius: 8px;
+    padding: 8px 18px;
+    max-width: 90vw;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border: 1.5px solid #a67c52;
+    margin-bottom: 8px;
+}
+@media (max-width: 600px) {
+    .img-lightbox-overlay img {
+        max-width: 98vw;
+        max-height: 50vh;
+        border-radius: 8px;
+        padding: 4px;
+    }
+    .img-lightbox-caption {
+        font-size: 1rem;
+        padding: 6px 8px;
+        border-radius: 6px;
+    }
+}
+
+/* ===== MENU HAMBURGUER ===== */
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    margin-left: 12px;
+}
+.hamburguer-bar {
+    width: 28px;
+    height: 4px;
+    background: #ffe7c2;
+    margin: 3px 0;
+    border-radius: 2px;
+    display: block;
+    transition: 0.3s;
+}
+
+/* MOBILE: menu escondido por padrão, aparece só com .menu-open */
+@media (max-width: 900px) {
+    .menu-hamburguer {
+        display: flex !important;
+    }
+    header nav ul.nav {
+        display: none !important;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        background: rgba(124,90,55,0.98);
+        border-radius: 0 0 12px 12px;
+        margin: 0;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: 2001;
+        box-shadow: 0 2px 12px rgba(124,90,55,0.13);
+    }
+    header nav ul.nav.menu-open {
+        display: flex !important;
+    }
+    header nav ul.nav li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #bfa074;
+        margin: 0;
+    }
+    header nav ul.nav li:last-child {
+        border-bottom: none;
+    }
+    header nav ul.nav a {
+        display: block;
+        padding: 16px 0;
+        font-size: 1.2rem;
+    }
+    header nav {
+        position: relative;
+    }
+}
+
+/* DESKTOP: menu sempre visível, menu-hamburguer some */
+@media (min-width: 901px) {
+    header nav ul.nav {
+        display: flex !important;
+        position: static !important;
+        background: none !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        gap: 28px !important;
+        flex-direction: row !important;
+        padding: 0 32px !important;
+        margin: 0 !important;
+    }
+    .menu-hamburguer {
+        display: none !important;
+    }
+}
+
+/* =========================
+   RESPONSIVIDADE MELHORADA PARA IMAGENS
+   ========================= */
+.secao-img-bloco img,
+.carousel img {
+    width: 100%;
+    height: auto;
+    max-width: 280px;
+    min-width: 0;
+    object-fit: cover;
+}
+@media (max-width: 900px) {
+    .secao-img-bloco img,
+    .carousel img {
+        max-width: 98vw;
+        min-width: 0;
+    }
+}
+@media (max-width: 600px) {
+    .secao-img-bloco img,
+    .carousel img {
+        max-width: 95vw;
+        min-width: 0;
+        border-radius: 8px;
+    }
+}
+
+/* =========================
+   LIGHTBOX DE IMAGEM - FONTE VISÍVEL E RESPONSIVA
+   ========================= */
+.img-lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 20, 10, 0.92);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    cursor: zoom-out;
+    animation: fadeIn 0.2s;
+    padding: 24px 8px;
+}
+.img-lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 70vh;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    background: #fff;
+    padding: 8px;
+    margin: 0 auto;
+    display: block;
+}
+.img-lightbox-caption {
+    color: #ffe7c2;
+    text-align: center;
+    margin-top: 18px;
+    font-size: 1.15rem;
+    text-shadow: 0 2px 8px #000;
+    background: rgba(44,36,24,0.92);
+    border-radius: 8px;
+    padding: 8px 18px;
+    max-width: 90vw;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border: 1.5px solid #a67c52;
+    margin-bottom: 8px;
+}
+@media (max-width: 600px) {
+    .img-lightbox-overlay img {
+        max-width: 98vw;
+        max-height: 50vh;
+        border-radius: 8px;
+        padding: 4px;
+    }
+    .img-lightbox-caption {
+        font-size: 1rem;
+        padding: 6px 8px;
+        border-radius: 6px;
+    }
+}
+
+/* ===== MENU HAMBURGUER ===== */
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    margin-left: 12px;
+}
+.hamburguer-bar {
+    width: 28px;
+    height: 4px;
+    background: #ffe7c2;
+    margin: 3px 0;
+    border-radius: 2px;
+    display: block;
+    transition: 0.3s;
+}
+
+/* MOBILE: menu escondido por padrão, aparece só com .menu-open */
+@media (max-width: 900px) {
+    .menu-hamburguer {
+        display: flex !important;
+    }
+    header nav ul.nav {
+        display: none !important;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        background: rgba(124,90,55,0.98);
+        border-radius: 0 0 12px 12px;
+        margin: 0;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: 2001;
+        box-shadow: 0 2px 12px rgba(124,90,55,0.13);
+    }
+    header nav ul.nav.menu-open {
+        display: flex !important;
+    }
+    header nav ul.nav li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #bfa074;
+        margin: 0;
+    }
+    header nav ul.nav li:last-child {
+        border-bottom: none;
+    }
+    header nav ul.nav a {
+        display: block;
+        padding: 16px 0;
+        font-size: 1.2rem;
+    }
+    header nav {
+        position: relative;
+    }
+}
+
+/* DESKTOP: menu sempre visível, menu-hamburguer some */
+@media (min-width: 901px) {
+    header nav ul.nav {
+        display: flex !important;
+        position: static !important;
+        background: none !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        gap: 28px !important;
+        flex-direction: row !important;
+        padding: 0 32px !important;
+        margin: 0 !important;
+    }
+    .menu-hamburguer {
+        display: none !important;
+    }
+}
+
+/* =========================
+   RESPONSIVIDADE MELHORADA PARA IMAGENS
+   ========================= */
+.secao-img-bloco img,
+.carousel img {
+    width: 100%;
+    height: auto;
+    max-width: 280px;
+    min-width: 0;
+    object-fit: cover;
+}
+@media (max-width: 900px) {
+    .secao-img-bloco img,
+    .carousel img {
+        max-width: 98vw;
+        min-width: 0;
+    }
+}
+@media (max-width: 600px) {
+    .secao-img-bloco img,
+    .carousel img {
+        max-width: 95vw;
+        min-width: 0;
+        border-radius: 8px;
+    }
+}
+
+/* =========================
+   LIGHTBOX DE IMAGEM - FONTE VISÍVEL E RESPONSIVA
+   ========================= */
+.img-lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 20, 10, 0.92);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    cursor: zoom-out;
+    animation: fadeIn 0.2s;
+    padding: 24px 8px;
+}
+.img-lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 70vh;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    background: #fff;
+    padding: 8px;
+    margin: 0 auto;
+    display: block;
+}
+.img-lightbox-caption {
+    color: #ffe7c2;
+    text-align: center;
+    margin-top: 18px;
+    font-size: 1.15rem;
+    text-shadow: 0 2px 8px #000;
+    background: rgba(44,36,24,0.92);
+    border-radius: 8px;
+    padding: 8px 18px;
+    max-width: 90vw;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border: 1.5px solid #a67c52;
+    margin-bottom: 8px;
+}
+@media (max-width: 600px) {
+    .img-lightbox-overlay img {
+        max-width: 98vw;
+        max-height: 50vh;
+        border-radius: 8px;
+        padding: 4px;
+    }
+    .img-lightbox-caption {
+        font-size: 1rem;
+        padding: 6px 8px;
+        border-radius: 6px;
+    }
+}
+
+/* ===== MENU HAMBURGUER ===== */
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    margin-left: 12px;
+}
+.hamburguer-bar {
+    width: 28px;
+    height: 4px;
+    background: #ffe7c2;
+    margin: 3px 0;
+    border-radius: 2px;
+    display: block;
+    transition: 0.3s;
+}
+
+/* MOBILE: menu escondido por padrão, aparece só com .menu-open */
+@media (max-width: 900px) {
+    .menu-hamburguer {
+        display: flex !important;
+    }
+    header nav ul.nav {
+        display: none !important;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        background: rgba(124,90,55,0.98);
+        border-radius: 0 0 12px 12px;
+        margin: 0;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: 2001;
+        box-shadow: 0 2px 12px rgba(124,90,55,0.13);
+    }
+    header nav ul.nav.menu-open {
+        display: flex !important;
+    }
+    header nav ul.nav li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #bfa074;
+        margin: 0;
+    }
+    header nav ul.nav li:last-child {
+        border-bottom: none;
+    }
+    header nav ul.nav a {
+        display: block;
+        padding: 16px 0;
+        font-size: 1.2rem;
+    }
+    header nav {
+        position: relative;
+    }
+}
+
+/* DESKTOP: menu sempre visível, menu-hamburguer some */
+@media (min-width: 901px) {
+    header nav ul.nav {
+        display: flex !important;
+        position: static !important;
+        background: none !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        gap: 28px !important;
+        flex-direction: row !important;
+        padding: 0 32px !important;
+        margin: 0 !important;
+    }
+    .menu-hamburguer {
+        display: none !important;
+    }
 }
