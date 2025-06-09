@@ -253,23 +253,39 @@ Entre esses processos destacam-se os de agricultura familiar e feiras agroecoló
             <div class="container formulario-container">
                 <div class="formulario" data-aos="zoom-in">
                     <h2>Entre em contato</h2>
+                    <p class="mb-3" style="font-size:1.1em;color:var(--primary-color);">
+                        <i class="fa-solid fa-envelope-circle-check"></i>
+                        Ficou com dúvidas, sugestões ou quer conversar? Preencha o formulário ou use um dos canais abaixo!
+                    </p>
                     <form id="form-contato" action="https://formsubmit.co/naomigabrielecostaalves@gmail.com" method="POST" autocomplete="on" novalidate>
                         <div class="form-group">
-                            <label for="nome">Nome</label>
+                            <label for="nome"><i class="fa fa-user"></i> Nome</label>
                             <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required autocomplete="name">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email"><i class="fa fa-envelope"></i> Email</label>
                             <input type="email" id="email" name="email" placeholder="Digite seu email" required autocomplete="email">
                         </div>
                         <div class="form-group">
-                            <label for="mensagem">Mensagem</label>
+                            <label for="mensagem"><i class="fa fa-comment-dots"></i> Mensagem</label>
                             <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem" required autocomplete="off"></textarea>
                         </div>
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_next" value="https://agrinho-site-sucesso.vercel.app/obrigado.html">
-                        <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-paper-plane"></i> Enviar mensagem
+                        </button>
                     </form>
+                    <div class="mt-4" aria-label="Outros meios de contato" style="width:100%;text-align:center;">
+                        <div style="margin-bottom:8px;">
+                            <i class="fa fa-envelope-open-text" aria-hidden="true"></i>
+                            <a href="mailto:naomigabrielecostaalves@gmail.com" style="color:var(--primary-color);font-weight:bold;">naomigabrielecostaalves@gmail.com</a>
+                        </div>
+                        <div>
+                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                            <a href="https://wa.me/5543988730910" target="_blank" rel="noopener" style="color:green;font-weight:bold;">(43) 99999-9999</a>
+                        </div>
+                    </div>
                     <div id="form-erro" class="alert alert-danger mt-2 d-none" role="alert" aria-live="polite"></div>
                     <div id="form-sucesso" class="alert alert-success mt-2 d-none" role="alert" aria-live="polite"></div>
                 </div>
