@@ -100,8 +100,8 @@ agrinho/
 ## 🖼️ Recursos utilizados
 
 - **Imagem de fundo:** [Pixabay](https://pixabay.com/) – imagem livre para uso comercial ([Pixabay License](https://pixabay.com/service/license/))
-- **Vídeo:** Canal oficial do SENAR no YouTube – usado para fins educacionais
-- **Dados:** Mapa (Ministério da Agricultura e Pecuária) e IBGE
+- **Vídeo:** Canal oficial do SENAR no YouTube[Agro e Arte: conexão entre o campo e a cidade](https://www.youtube.com/watch?v=n8RcQM5MIr8) – usado para fins educacionais
+- **Dados:** Mapa (Ministério da Agricultura e Pecuária) e [IBGE](https://www.ibge.gov.br/)
 - **Projetos:** [gov.br](https://www.gov.br/pt-br)
 - **Sites das noticias do campo:** [Notícias Agrícolas](https://www.noticiasagricolas.com.br/), [Agrolink](https://www.agrolink.com.br/) e [Canal Rural](https://www.canalrural.com.br/)
 - **Sites das noticias da cidade:** [G1](https://g1.globo.com/), [UOL Notícias](https://www.uol.com.br/) e [Estadão](https://www.estadao.com.br/)
