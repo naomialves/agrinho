@@ -136,6 +136,6 @@ Confira o arquivo [LICENSE](LICENSE) para mais detalhes.
 - 👨‍🏫 Professor: Josiane Aparecida Ruiz dos santos 
 - 🌐 GitHub: [@naomialves](https://github.com/naomialves)
  
+Nota: Todos os codigos foram programados de acordo com as aulas do Alura e videos de outros professores no Youtube.
 
 ---
-Nota: Todos os codigos foram programados de acordo com as aulas do Alura e videos de outros professores no Youtube.
