@@ -138,4 +138,4 @@ Confira o arquivo [LICENSE](LICENSE) para mais detalhes.
  
 
 ---
-
+Nota: Todos os codigos foram programados de acordo com as aulas do Alura e videos de outros professores no Youtube.
