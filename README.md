@@ -2,6 +2,7 @@
 ---
 
 # 🌾 Agrinho – Conexão Campo‑Cidade
+![download](https://github.com/user-attachments/assets/54c851b6-51b6-449d-bc2d-52a58f697573)
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/naomialves/agrinho)
 ![License](https://img.shields.io/github/license/naomialves/agrinho)
