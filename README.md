@@ -22,7 +22,7 @@
 - [Recursos utilizados](#recursos-utilizados)
 - [Contribuições](#contribuições)
 - [Licença](#licença)
-- [Autor](#autor)
+- [Autor, rede de ensino e professor](#autor,rede-de-ensino-e-professor)
 
 ---
 
@@ -121,11 +121,14 @@ Confira o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
 
-## 👤 Autor
+## 👤 Autor, rede de ensino e professor
 
-- Naomi Alves
+- 👤 Autor: Naomi Alves
+- 🏢 Escola: Colégio Estadual José Siqueira Rosas
+- 👨‍🏫 Professor: Josiane Aparecida Ruiz dos santos 
 - 📧 E-mail: naomigabrielecostaalves@gmail.com
 - 🌐 GitHub: [@naomialves](https://github.com/naomialves)
+ 
 
 ---
 
